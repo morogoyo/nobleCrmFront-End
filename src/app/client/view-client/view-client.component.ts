@@ -15,10 +15,10 @@ export class ViewClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  function(){ this.clientService.getClients().subscribe((data: any[]) => {
-    console.log(data);
-    this.clients = data;
-  })
+  getWelcomeMessage() {
+    this.clientService.getClients().subscribe((data: any[]) => {
+      console.log(data);
+      this.clients = data;
+    })
   }
-
 }
