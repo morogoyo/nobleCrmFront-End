@@ -1,26 +1,26 @@
 <!--<head>-->
 <!--  <meta charset="UTF-8">-->
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <title>Login</title>-->
+<!--  <title>{{title}}</title>-->
 <!--  <link rel="stylesheet" href="authenticate.component.css">-->
 <!--&lt;!&ndash;  <script defer src="login-page.js"></script>&ndash;&gt;-->
 <!--</head>-->
 
 <div>
-  <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
-    <input type="text" class="fortextbox" name="emailid" placeholder="emailid"
-           formControlName="emailid">
+  <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization()" >
+    <input type="text" class="fortextbox" name="userName" placeholder="User"
+           formControlName="userName">
     <br/>
 
-    <input type="password" class="fortextbox" name="passwd"
-           placeholder="passwd" formControlName="passwd">
+    <input type="password" class="fortextbox" name="password"
+           placeholder="password" formControlName="password">
     <br/>
 
-    <input type="submit" class="forsubmit" value="Log In">
+    <input type="submit" class="forsubmit" value="Log In" >
   </form>
 </div>
 
-  <button (click)="login()">click me</button>
+
 
 
 

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {AuthServiceService} from "../../services/authentication/auth-service.service";
 
 @Component({
   selector: 'app-authenticate',
@@ -8,35 +9,32 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class AuthenticateComponent implements OnInit {
 
+  constructor(private fb: FormBuilder, private httpService: AuthServiceService) { }
 
-  ////////////////////////////////////////////////////////////////////////////////
+  loginForm = this.fb.group({
+    // fname: [''],
+    // lname: [''],
+    userName: [''],
+    password: [''],
+    // streetAddress: [''],
+    // city: [''],
+    // state: [''],
+    // zipcode: [''],
+    // dateOfBirth: [''],
+    // gender: [''],
+    // email: ['']
+  });
 
-  title = 'Angular 4 Project!';
-  todaydate;
-  componentproperty;
-  emailid;
-  formdata;
+  testVariable = [];
 
-  ////////////////////////////////////////////////////////////////////////////////
-  constructor() {
+  onClickSubmitAuthorization() {
+    console.warn(this.loginForm.value);
+    this.httpService.authenticate(this.loginForm.value)
+      .subscribe(d => console.log('LoggedIn User'),
+        error => { console.log(error); });
   }
 
-  ngOnInit(): void {
-
-    // this.todaydate = this.myservice.showTodayDate();
-    this.formdata = new FormGroup({
-      emailid: new FormControl("angular@gmail.com"),
-      passwd: new FormControl("abcd1234")
-    });
-
+  ngOnInit() {
   }
-  login() {
-    console.log("testing button");
-  }
-
-  onClickSubmit(data) {
-    this.emailid = data.emailid;
-  }
-
 
 }
