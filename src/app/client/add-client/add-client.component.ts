@@ -12,4 +12,7 @@ export class AddClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getWelcomeMessage() {
+    console.log("button is clicked !!!!!!")
+  }
 }

@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {User} from "../../interface/user";
+import {map, tap} from "rxjs/operators";
+import {Observable} from "rxjs";
+
+
+export const TOKEN = 'token';
+export const AUTHENTICATED_USER = 'authenticatedUser';
+export const  CONTENT_TYPE = 'application/json';
+export const  ACCESS_CONTROL_ALLOW_ORIGIN = '*';
+export const  ORIGIN = 'http://localhost:4200';
+export const  ACCESS_CONTROL_ALLOW_METHODS = 'PUT, DELETE, POST, GET, OPTIONS';
+export const  ACCESS_CONTROL_ALLOW_HEADERS = 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, Accept';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthServiceService {
+
+  constructor(private httpClient: HttpClient) { }
+
+  url = "http://localhost:8080/authenticate";
+  httpOptions = {
+    // tslint:disable-next-line:max-line-length
+    headers: new HttpHeaders({
+      'Content-Type': CONTENT_TYPE,
+      'Access-Control-Allow-Origin': ACCESS_CONTROL_ALLOW_ORIGIN,
+      'Origin': ORIGIN,
+      'Access-Control-Allow-Methods': ACCESS_CONTROL_ALLOW_METHODS,
+      'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS })
+  };
+
+  userCreds: User;
+  private test: Observable<any>;
+
+  public authenticate(data){
+    this.userCreds={username: data.userName, password: data.password}
+     this.test = this.httpClient.post<any>(this.url,
+                                     this.userCreds,
+                                      this.httpOptions)
+      .pipe(
+                      map( data => {
+              tap(data => console.log('inside authentication service method'));
+              tap(data => console.log(data.toString()))
+            sessionStorage.setItem(AUTHENTICATED_USER, data.userName);
+            sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+            return data;
+      }
+      ));
+
+    return this.test
+
+  }
+}

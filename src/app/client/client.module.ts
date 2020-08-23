@@ -8,7 +8,8 @@ import {ClientService} from "../services/client/client.service";
 @NgModule({
   declarations: [
     AddClientComponent,
-    ViewClientComponent
+    ViewClientComponent,
+
   ],
   imports: [
     CommonModule,
