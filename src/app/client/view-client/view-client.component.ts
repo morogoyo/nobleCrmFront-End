@@ -16,8 +16,8 @@ export class ViewClientComponent implements OnInit {
   }
 
   getWelcomeMessage() {
-    this.clientService.getClients().subscribe((data: any[]) => {
-      console.log(data);
+    this.clientService.getClients().subscribe((data) => {
+      console.log( data);
       this.clients = data;
     })
   }

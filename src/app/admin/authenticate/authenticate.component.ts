@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {AuthServiceService} from "../../services/authentication/auth-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-authenticate',
@@ -9,7 +10,7 @@ import {AuthServiceService} from "../../services/authentication/auth-service.ser
 })
 export class AuthenticateComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private httpService: AuthServiceService) { }
+  constructor(private fb: FormBuilder, private httpService: AuthServiceService, private router: Router) { }
 
   loginForm = this.fb.group({
     // fname: [''],
@@ -30,8 +31,17 @@ export class AuthenticateComponent implements OnInit {
   onClickSubmitAuthorization() {
     console.warn(this.loginForm.value);
     this.httpService.authenticate(this.loginForm.value)
-      .subscribe(d => console.log('LoggedIn User'),
-        error => { console.log(error); });
+
+      .subscribe(d => {
+        console.log('LoggedIn User');
+        //todo need to figure out where to redirect this call
+          this.router.navigate(['/client/view'])
+        },
+            error => { console.log(error)
+        },
+        () => {}
+      );
+
   }
 
   ngOnInit() {
