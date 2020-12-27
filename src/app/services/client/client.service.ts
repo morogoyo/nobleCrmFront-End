@@ -25,6 +25,7 @@ export class ClientService {
   private uri: string;
 
   private token = sessionStorage.getItem('token');
+  private user = sessionStorage.getItem('authenticatedUser');
 
   httpOptions = {
     // tslint:disable-next-line:max-line-length
@@ -34,7 +35,7 @@ export class ClientService {
       'Access-Control-Allow-Methods': ACCESS_CONTROL_ALLOW_METHODS,
       'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS,
       'Authorization': this.token,
-      // 'User': sessionStorage.getItem('username')
+      'User': this.user
     })
   };
 
@@ -60,6 +61,10 @@ export class ClientService {
     //
     return this.httpClient.get<any>(this.REST_API_SERVER + this.uri, this.httpOptions);
       // return Observable.create();  // only for testing a return
+  }
+
+  public addClient(): Observable<any>{
+    return this.httpClient.post<any>(this.REST_API_SERVER + this.uri,this.httpOptions);
   }
 
 

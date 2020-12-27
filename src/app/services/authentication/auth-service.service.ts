@@ -41,9 +41,11 @@ export class AuthServiceService {
                                      this.userCreds,
                                       this.httpOptions)
       .pipe(
-                      map( data => {
-              tap(data => console.log('inside authentication service method'));
-              tap(data => console.log(data.toString()))
+
+            tap(data => console.log('inside authentication service method')),
+            tap(data => console.log(data.toString())),
+            map( data => {
+
             sessionStorage.setItem(AUTHENTICATED_USER, data.userName);
             sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
             return data;

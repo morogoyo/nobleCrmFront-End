@@ -7,6 +7,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ClientModule} from "./client/client.module";
 import {AdminModule} from "./admin/admin.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ClientModule,
     ReactiveFormsModule,
-    AdminModule
+    AdminModule,
+    NgbModule
 
   ],
   providers: [],

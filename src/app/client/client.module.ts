@@ -4,6 +4,7 @@ import {AddClientComponent} from './add-client/add-client.component';
 import {ViewClientComponent} from './view-client/view-client.component';
 import {ClientRoutes} from "./client-routes.module";
 import {ClientService} from "../services/client/client.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {ClientService} from "../services/client/client.service";
   ],
   imports: [
     CommonModule,
-    ClientRoutes
+    ClientRoutes,
+    ReactiveFormsModule
   ],
   providers: [
     ClientService
