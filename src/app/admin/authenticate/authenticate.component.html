@@ -30,17 +30,17 @@
   <title>Dore jQuery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!--  <link rel="stylesheet" href="assets/font/iconsmind-s/css/iconsminds.css" />-->
-  <!--  <link rel="stylesheet" href="assets/font/simple-line-icons/css/simple-line-icons.css" />-->
+<!--  <link rel="stylesheet" href="assets/font/iconsmind-s/css/iconsminds.css" />-->
+<!--  <link rel="stylesheet" href="assets/font/simple-line-icons/css/simple-line-icons.css" />-->
 
-  <!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />-->
-  <!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.rtl.only.min.css" />-->
-  <!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap-float-label.min.css" />-->
-  <!--  <link rel="stylesheet" href="assets/css/main.css" />-->
-  <!--</head>-->
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.rtl.only.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap-float-label.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/main.css" />-->
+</head>
 
-<!--<body class="background show-spinner no-footer">-->
-<!--<div class="fixed-background"></div>-->
+<div class="background show-spinner no-footer">
+<div class="fixed-background"></div>
 <!--<main>-->
   <div class="container">
     <div class="row h-100">
@@ -57,18 +57,20 @@
             </p>
           </div>
           <div class="form-side">
-<!--            <a href="Dashboard.Default.html">
-              <span class="logo-single"></span>
-            </a>-->
+<!--            <a href="Dashboard.Default.html">-->
+<!--              <span class="logo-single"></span>-->
+<!--            </a>-->
             <h6 class="mb-4">Login</h6>
-            <form [formGroup]="loginForm" (ngSubmit)="onClickSubmitAuthorization">
+            <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization" >
               <label class="form-group has-float-label mb-4">
-                <input type="text" class="form-control" name="userName" placeholder="User" formControlName="userName"/>
+                <input type="text" class="form-control" name="userName" placeholder="User"
+                        formControlName="userName">
+<!--                <input class="form-control" />-->
                 <span>User Name</span>
               </label>
+
               <label class="form-group has-float-label mb-4">
-                <input class="form-control" type="password" name="password" placeholder="password"
-                       formControlName="password"/>
+                <input class="form-control" type="password" placeholder="" />
                 <span>Password</span>
               </label>
               <div class="d-flex justify-content-between align-items-center">
@@ -82,11 +84,11 @@
     </div>
   </div>
 <!--</main>-->
-<script src="../../../assets/js/vendor/jquery-3.3.1.min.js"></script>
-<script src="../../../assets/js/vendor/bootstrap.bundle.min.js"></script>
-<script src="../../../assets/js/dore.script.js"></script>
-<script src="../../../assets/js/scripts.js"></script>
-<!--</body>-->
+<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/dore.script.js"></script>
+<script src="assets/js/scripts.js"></script>
+</div>
 
 
 

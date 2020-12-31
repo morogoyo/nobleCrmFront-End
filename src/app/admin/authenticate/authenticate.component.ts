@@ -7,12 +7,7 @@ import {Router} from "@angular/router";
   selector: 'app-authenticate',
   templateUrl: 'authenticate.component.html',
   // templateUrl: '../../../assets/Pages.Auth.Login.html',
-  styleUrls: ['authenticate.component.css','../../../assets/css/main.css',
-              '../../../assets/font/iconsmind-s/css/iconsminds.css',
-    '../../../assets/font/simple-line-icons/css/simple-line-icons.css',
-     '../../../assets/css/vendor/bootstrap.min.css',
-      '../../../assets/css/vendor/bootstrap.rtl.only.min.css',
-      '../../../assets/css/vendor/bootstrap-float-label.min.css']
+  styleUrls: []
 })
 export class AuthenticateComponent implements OnInit {
 
