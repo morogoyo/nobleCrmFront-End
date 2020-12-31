@@ -3,10 +3,11 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {AuthServiceService} from "../../services/authentication/auth-service.service";
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-authenticate',
   templateUrl: './authenticate.component.html',
-  styleUrls: ['./authenticate.component.css']
+  styleUrls: ['./authenticate.component.scss']
 })
 export class AuthenticateComponent implements OnInit {
 
