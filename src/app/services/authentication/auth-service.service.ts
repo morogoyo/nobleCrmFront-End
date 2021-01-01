@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../../interface/user";
 import {map, tap} from "rxjs/operators";
 import {Observable} from "rxjs";
+import {API_URL} from "../../app.constants";
 
 
 export const TOKEN = 'token';
@@ -17,11 +18,11 @@ export const  ACCESS_CONTROL_ALLOW_HEADERS = 'Content-Type, Access-Control-Allow
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "http://localhost:8080/authenticate";
+  // url = "http://localhost:8080/authenticate";
   httpOptions = {
     // tslint:disable-next-line:max-line-length
     headers: new HttpHeaders({
@@ -33,11 +34,11 @@ export class AuthServiceService {
   };
 
   userCreds: User;
-  private test: Observable<any>;
+  private authCall: Observable<any>;
 
   public authenticate(data){
     this.userCreds={username: data.userName, password: data.password}
-     this.test = this.httpClient.post<any>(this.url,
+     this.authCall = this.httpClient.post<any>( `${API_URL}`,
                                      this.userCreds,
                                       this.httpOptions)
       .pipe(
@@ -50,7 +51,32 @@ export class AuthServiceService {
       }
       ));
 
-    return this.test
+    return this.authCall
 
   }
+
+
+  getAuthenticatedUser() {
+    return sessionStorage.getItem(AUTHENTICATED_USER)
+  }
+
+  getAuthenticatedToken() {
+    if(this.getAuthenticatedUser())
+      return sessionStorage.getItem(TOKEN)
+  }
+
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem(AUTHENTICATED_USER)
+    return !(user === null)
+  }
+
+  logout(){
+    sessionStorage.removeItem(AUTHENTICATED_USER)
+    sessionStorage.removeItem(TOKEN)
+  }
+
+}
+
+export class AuthenticationBean{
+  constructor(public message:string) { }
 }
