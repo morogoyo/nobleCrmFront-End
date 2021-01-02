@@ -25,7 +25,7 @@ export class ClientService {
     console.log(this.httpIntercept.httpOptions);
     this.uri = "/client/all"
     //
-    return this.httpClient.get<any>(this.REST_API_SERVER + this.uri);
+    return this.httpClient.get<any>(this.REST_API_SERVER + this.uri, this.httpIntercept.httpOptions);
       // return Observable.create();  // only for testing a return
   }
 
