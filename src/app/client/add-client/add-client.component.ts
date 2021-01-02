@@ -6,7 +6,7 @@ import {ClientService} from "../../services/client/client.service";
 @Component({
   selector: 'app-add-client',
   templateUrl: './add-client.component.html',
-  styleUrls: ['./add-client.component.css']
+  styleUrls: ['./add-client.component.scss']
 })
 export class AddClientComponent implements OnInit {
 
