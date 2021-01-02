@@ -21,10 +21,13 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+
             ],
             "styles": [
-              "src/styles.css"
+              "src/assets/scss/bootstrap.scss",
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.scss"
             ],
             "scripts": []
           },
@@ -88,7 +91,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -119,6 +122,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "nobleCrmFront-End"
+    }
+  },
+  "defaultProject": "nobleCrmFront-End",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
