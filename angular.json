@@ -23,13 +23,26 @@
               "src/favicon.ico",
               "src/assets",
 
+              "src/assets/img",
+              "src/assets/logos"
             ],
             "styles": [
-              "src/assets/scss/bootstrap.scss",
-              "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.scss"
+              "src/assets/font/iconsmind-s/css/iconsminds.css",
+              "src/assets/font/simple-line-icons/css/simple-line-icons.css",
+              "src/assets/css/vendor/bootstrap.min.css",
+              "src/assets/css/vendor/bootstrap.rtl.only.min.css",
+              "src/assets/css/vendor/bootstrap-float-label.min.css",
+              "src/assets/css/main.css" ,
+              "src/styles.css"
+
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/vendor/jquery-3.3.1.min.js",
+              "src/assets/js/vendor/bootstrap.bundle.min.js",
+              "src/assets/js/dore.script.js",
+              "src/assets/js/scripts.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -88,12 +101,19 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/css",
+              "src/assets/font",
+              "src/assets/img",
+
+              "src/assets/logos"
             ],
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           }
         },
         "lint": {

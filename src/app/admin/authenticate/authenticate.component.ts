@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-authenticate',
+  templateUrl: 'authenticate.component.html',
   templateUrl: './authenticate.component.html',
   styleUrls: []
 })
@@ -28,6 +29,7 @@ export class AuthenticateComponent implements OnInit {
   });
 
   testVariable = [];
+  title = "authenticate";
 
   onClickSubmitAuthorization() {
     // console.warn(this.loginForm.value);

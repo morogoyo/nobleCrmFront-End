@@ -1,84 +1,67 @@
-<div class="account-pages pt-5 my-5">
+<head>
+  <meta charset="UTF-8">
+  <title>Dore jQuery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!--  <link rel="stylesheet" href="assets/font/iconsmind-s/css/iconsminds.css" />-->
+<!--  <link rel="stylesheet" href="assets/font/simple-line-icons/css/simple-line-icons.css" />-->
+
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap.rtl.only.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/vendor/bootstrap-float-label.min.css" />-->
+<!--  <link rel="stylesheet" href="assets/css/main.css" />-->
+</head>
+
+<div class="background show-spinner no-footer">
+<div class="fixed-background"></div>
+<!--<main>-->
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6 col-xl-5">
-        <div class="account-card-box">
-          <div class="card mb-0">
-            <div class="card-body p-4">
+    <div class="row h-100">
+      <div class="col-12 col-md-10 mx-auto my-auto">
+        <div class="card auth-card">
+          <div class="position-relative image-side ">
 
-              <div class="text-center">
-                <div class="my-3">
-                  <a href="index.html">
-                    <span><img src="assets/images/logo.png" alt="" height="28"></span>
-                  </a>
-                </div>
-                <h5 class="text-muted text-uppercase py-3 font-16">Sign In</h5>
-              </div>
+            <p class=" text-white h2">MAGIC IS IN THE DETAILS</p>
 
-              <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization()" >
-                <div class="form-group mb-3">
-<!--                  <input class="form-control" type="text" required="" placeholder="Enter your username">-->
-                  <input type="text" class="form-control" name="userName" placeholder="User"
-                         formControlName="userName">
-                </div>
-
-                <div class="form-group mb-3">
-<!--                  <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">-->
-                  <input type="password" class="form-control" name="password" placeholder="password" formControlName="password">
-                </div>
-
-                <div class="form-group mb-3">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
-                    <label class="custom-control-label" for="checkbox-signin">Remember me</label>
-                  </div>
-                </div>
-
-                <div class="form-group text-center">
-                  <button class="btn btn-success btn-block waves-effect waves-light" type="submit"> Log In </button>
-                </div>
-
-                <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
-
-              </form>
-
-              <div class="text-center mt-4">
-                <h5 class="text-muted py-2"><b>Sign in with</b></h5>
-
-                <div class="row">
-                  <div class="col-12">
-                    <button type="button" class="btn btn-facebook waves-effect font-14 waves-light mt-3">
-                      <i class="fab fa-facebook-f mr-1"></i> Facebook
-                    </button>
-
-                    <button type="button" class="btn btn-twitter waves-effect font-14 waves-light mt-3">
-                      <i class="fab fa-twitter mr-1"></i> Twitter
-                    </button>
-
-                    <button type="button" class="btn btn-googleplus waves-effect font-14 waves-light mt-3">
-                      <i class="fab fa-google-plus-g mr-1"></i> Google+
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-            </div> <!-- end card-body -->
+            <p class="white mb-0">
+              Please use your credentials to login.
+              <br>If you are not a member, please
+              <a href="#" class="white">register</a>.
+            </p>
           </div>
-          <!-- end card -->
-        </div>
+          <div class="form-side">
+<!--            <a href="Dashboard.Default.html">-->
+<!--              <span class="logo-single"></span>-->
+<!--            </a>-->
+            <h6 class="mb-4">Login</h6>
+            <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization" >
+              <label class="form-group has-float-label mb-4">
+                <input type="text" class="form-control" name="userName" placeholder="User"
+                        formControlName="userName">
+<!--                <input class="form-control" />-->
+                <span>User Name</span>
+              </label>
 
-        <div class="row mt-3">
-          <div class="col-12 text-center">
-            <p class="text-white-50">Don't have an account? <a href="pages-register.html" class="text-white ml-1"><b>Sign Up</b></a></p>
-          </div> <!-- end col -->
+              <label class="form-group has-float-label mb-4">
+                <input class="form-control" type="password" placeholder="" />
+                <span>Password</span>
+              </label>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#">Forget password?</a>
+                <button class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <!-- end row -->
-
-      </div> <!-- end col -->
+      </div>
     </div>
-    <!-- end row -->
   </div>
-  <!-- end container -->
+<!--</main>-->
+<script src="assets/js/vendor/jquery-3.3.1.min.js"></script>
+<script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+<script src="assets/js/dore.script.js"></script>
+<script src="assets/js/scripts.js"></script>
+
 </div>
 <!-- end page -->
 

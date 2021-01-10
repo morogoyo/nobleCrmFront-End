@@ -7,7 +7,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ClientModule} from "./client/client.module";
 import {AdminModule} from "./admin/admin.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpJWTInterceptorService} from "./services/httpInterceptor/http-jwt-interceptor.service";
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {HttpJWTInterceptorService} from "./services/httpInterceptor/http-jwt-int
     HttpClientModule,
     ClientModule,
     ReactiveFormsModule,
-    AdminModule
+    AdminModule,
+    NgbModule
 
   ],
   providers: [
