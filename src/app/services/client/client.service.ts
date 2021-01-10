@@ -9,6 +9,7 @@ import {
   CONTENT_TYPE,
   ORIGIN
 } from "../authentication/auth-service.service";
+import {API_URL, REST_API_SERVER} from "../../app.constants";
 
 @Injectable({
   providedIn: 'root',
@@ -19,11 +20,11 @@ export class ClientService {
   //todo need to figure out how to pass in headers dont have clear example
   // long time since I have done it
 
-  private REST_API_SERVER = "http://localhost:8080"
+  private REST_API_SERVER = `${REST_API_SERVER}`
   private uri: string;
 
 
-  httpOptions1 = {
+  httpOptions = {
     // tslint:disable-next-line:max-line-length
     headers: new HttpHeaders({
       'Content-Type': CONTENT_TYPE,
@@ -44,7 +45,7 @@ export class ClientService {
     this.uri = "/client/all"
 
     //
-    return this.httpClient.get<any>(this.REST_API_SERVER + this.uri, this.httpOptions1);
+    return this.httpClient.get<any>(this.REST_API_SERVER + this.uri, this.httpOptions);
       // return Observable.create();  // only for testing a return
 
   }

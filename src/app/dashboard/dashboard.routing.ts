@@ -7,6 +7,13 @@ export const DashboardRoutes: Routes = [
     component: DashboardComponent,
     data: {
       heading: "Dashboard"
-    }
+    },
+    children: [
+      {
+        path: "",
+        loadChildren: () =>
+          import("../client/client.module").then(m => m.ClientModule)
+      }
+      ]
   }
 ];
