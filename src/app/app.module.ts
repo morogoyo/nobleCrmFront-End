@@ -12,6 +12,7 @@ import {
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
+
 import { AppComponent } from "./app.component";
 import { AppRoutes } from "./app.routing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -29,6 +30,8 @@ import { HttpJWTInterceptorService } from './services/httpInterceptor/http-jwt-i
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
+
+
 
 @NgModule({
   declarations: [
@@ -49,6 +52,7 @@ export function createTranslateLoader(http: HttpClient) {
     RouterModule.forRoot(AppRoutes),
     FormsModule,
     HttpClientModule,
+<<<<<<< HEAD
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -59,6 +63,16 @@ export function createTranslateLoader(http: HttpClient) {
     LoadingBarRouterModule,
     NgbModule,
     MatSidenavModule
+=======
+    ClientModule,
+    ReactiveFormsModule,
+    AdminModule,
+    NgbModule
+
+  ],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpJWTInterceptorService, multi: true}
+>>>>>>> develop
   ],
   bootstrap: [AppComponent],
   providers: [{

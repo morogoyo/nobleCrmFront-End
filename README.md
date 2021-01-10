@@ -1,6 +1,18 @@
 # Stacked
 
+<<<<<<< HEAD
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5
+=======
+Application Endpoints:
+
+/client/view
+
+/client/add
+
+/admin/auth
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+>>>>>>> develop
 
 ## Development server
 

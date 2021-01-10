@@ -24,6 +24,7 @@ export class ClientService {
   private uri: string;
 
 
+
   httpOptions = {
     // tslint:disable-next-line:max-line-length
     headers: new HttpHeaders({
@@ -34,8 +35,8 @@ export class ClientService {
       'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS })
   };
 
-
   constructor(private httpClient: HttpClient, private httpIntercept: HttpJWTInterceptorService) {
+
   }
 
 
@@ -48,6 +49,10 @@ export class ClientService {
     return this.httpClient.get<any>(this.REST_API_SERVER + this.uri, this.httpOptions);
       // return Observable.create();  // only for testing a return
 
+  }
+
+  public addClient(): Observable<any>{
+    return this.httpClient.post<any>(this.REST_API_SERVER + this.uri,this.httpOptions);
   }
 
 
