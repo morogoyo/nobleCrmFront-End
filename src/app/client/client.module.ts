@@ -6,18 +6,21 @@ import {ClientRoutes} from "./client-routes.module";
 import {ClientService} from "../services/client/client.service";
 
 @NgModule({
-  declarations: [
-    AddClientComponent,
-    ViewClientComponent,
+    declarations: [
+        AddClientComponent,
+        ViewClientComponent,
 
-  ],
-  imports: [
-    CommonModule,
-    ClientRoutes
-  ],
-  providers: [
-    ClientService
-  ]
+    ],
+    imports: [
+        CommonModule,
+        ClientRoutes
+    ],
+    exports: [
+        ViewClientComponent
+    ],
+    providers: [
+        ClientService
+    ]
 })
 
 export class ClientModule {
