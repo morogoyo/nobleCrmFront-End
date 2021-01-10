@@ -13,10 +13,11 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 
     ],
-    imports: [
-        CommonModule,
-        ClientRoutes
-    ],
+  imports: [
+    CommonModule,
+    ClientRoutes,
+    ReactiveFormsModule
+  ],
     exports: [
         ViewClientComponent
     ],

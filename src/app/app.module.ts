@@ -52,7 +52,6 @@ export function createTranslateLoader(http: HttpClient) {
     RouterModule.forRoot(AppRoutes),
     FormsModule,
     HttpClientModule,
-<<<<<<< HEAD
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -63,16 +62,7 @@ export function createTranslateLoader(http: HttpClient) {
     LoadingBarRouterModule,
     NgbModule,
     MatSidenavModule
-=======
-    ClientModule,
-    ReactiveFormsModule,
-    AdminModule,
-    NgbModule
 
-  ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: HttpJWTInterceptorService, multi: true}
->>>>>>> develop
   ],
   bootstrap: [AppComponent],
   providers: [{
