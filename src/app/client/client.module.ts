@@ -7,19 +7,24 @@ import {ClientService} from "../services/client/client.service";
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
-  declarations: [
-    AddClientComponent,
-    ViewClientComponent,
+    declarations: [
+        AddClientComponent,
+        ViewClientComponent,
 
-  ],
+
+    ],
   imports: [
     CommonModule,
     ClientRoutes,
     ReactiveFormsModule
   ],
-  providers: [
-    ClientService
-  ]
+    exports: [
+        ViewClientComponent
+    ],
+    providers: [
+        ClientService
+    ]
+
 })
 
 export class ClientModule {
