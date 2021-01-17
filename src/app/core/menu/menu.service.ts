@@ -38,6 +38,38 @@ const MENUITEMS = [
     icon: "ion-ios-help"
   },
   {
+    state: "dashboard",
+    name: "Client Administration",
+    type: "sub",
+    icon: "ion-ios-help",
+    children: [
+      {
+        state: "view",
+        name: "View",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
+        state: "add",
+        name: "Add",
+        type: "link",
+        icon: "ion-ios-help"
+      }
+    ]
+  },
+  {
+    state: "view",
+    name: "View",
+    type: "link",
+    icon: "ion-ios-help"
+  },
+  {
+    state: "add",
+    name: "Add",
+    type: "link",
+    icon: "ion-ios-help"
+  },
+  {
     type: "divider"
   },
   {
@@ -81,6 +113,22 @@ const MENUITEMS = [
       {
         state: "500",
         name: "500"
+      }
+    ]
+  },
+  {
+    state: "dashboard",
+    name: "Client Administration",
+    type: "sub",
+    icon: "ion-ios-people",
+    children: [
+      {
+        state: "view",
+        name: "VIEW"
+      },
+      {
+        state: "add",
+        name: "ADD"
       }
     ]
   }
