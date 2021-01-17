@@ -5,9 +5,9 @@ import {NgModule} from "@angular/core";
 
 
 const clientRoutesModule: Routes = [
-  {path: 'view', component: ViewClientComponent},
+
   {path: 'add', component: AddClientComponent},
-  // { path: 'login', component: AuthenticationComponent }
+  {path: 'view', component: ViewClientComponent}
 ];
 
 @NgModule({

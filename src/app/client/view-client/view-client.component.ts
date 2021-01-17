@@ -13,9 +13,10 @@ export class ViewClientComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
+    this.getAllClients();
   }
 
-  getWelcomeMessage() {
+  getAllClients() {
     this.clientService.getClients().subscribe((data) => {
       console.log( data);
       this.clients = data;

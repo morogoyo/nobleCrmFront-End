@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {HttpJWTInterceptorService} from "../httpInterceptor/http-jwt-interceptor.service";
+import { Injectable} from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable} from "rxjs";
+import { HttpJWTInterceptorService } from "../httpInterceptor/http-jwt-interceptor.service";
 import {
   ACCESS_CONTROL_ALLOW_HEADERS,
   ACCESS_CONTROL_ALLOW_METHODS,
@@ -9,7 +9,9 @@ import {
   CONTENT_TYPE,
   ORIGIN
 } from "../authentication/auth-service.service";
-import {API_URL, REST_API_SERVER} from "../../app.constants";
+import {REST_API_SERVER} from "../../app.constants";
+import { Client } from "../../interface/client";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +22,9 @@ export class ClientService {
   //todo need to figure out how to pass in headers dont have clear example
   // long time since I have done it
 
-  private REST_API_SERVER = `${REST_API_SERVER}`
+  private REST_API_SERVER = `${REST_API_SERVER}`;
   private uri: string;
+  private client: Client;
 
 
 
@@ -35,7 +38,7 @@ export class ClientService {
       'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS })
   };
 
-  constructor(private httpClient: HttpClient, private httpIntercept: HttpJWTInterceptorService) {
+  constructor(private httpClient: HttpClient, private httpIntercept: HttpJWTInterceptorService, private router: Router) {
 
   }
 
@@ -51,9 +54,32 @@ export class ClientService {
 
   }
 
-  public addClient(): Observable<any>{
-    return this.httpClient.post<any>(this.REST_API_SERVER + this.uri,this.httpOptions);
+  public addClient(data): Observable<Client> {
+
+    this.client = {
+      fname: data.fname,
+      lname: data.lname,
+      userName: data.userName,
+      password: data.password,
+      passwordConfirm: data.passwordConfirm,
+      streetAddress: data.streetAddress,
+      city: data.city,
+      state: data.state,
+      zipcode: data.zipcode,
+      dateOfBirth: data.dateOfBirth,
+      gender: data.gender,
+      email: data.email
+
+    }
+
+    console.log(this.client.toString())
+
+
+      this.uri = "/client/add"
+      return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri, this.client, this.httpOptions);
+
+
+
+
   }
-
-
 }
