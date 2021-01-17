@@ -32,12 +32,11 @@ export class AddClientComponent implements OnInit {
 
   onClickSubmitClientData() {
     console.warn(this.insertClient.value);
-    this.httpService.addClient()
-
+    this.httpService.addClient(this.insertClient.value)
       .subscribe(d => {
           console.log('Added new User');
           //todo need to figure out where to redirect this call
-          this.router.navigate(['/client/view'])
+          this.router.navigate(['/view'])
         },
         error => {
           console.log(error)
@@ -51,7 +50,4 @@ export class AddClientComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getWelcomeMessage() {
-    console.log("button is clicked !!!!!!")
-  }
 }
