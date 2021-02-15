@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../../interface/user";
 import {map, tap} from "rxjs/operators";
-import {Observable} from "rxjs";
+import {Observable, BehaviorSubject } from "rxjs";
 import {API_URL} from "../../app.constants";
 
 
@@ -20,8 +20,8 @@ export const  ACCESS_CONTROL_ALLOW_HEADERS = 'Content-Type, Access-Control-Allow
 })
 export class AuthService {
 
-  constructor(private httpClient: HttpClient) { }
-
+  private currentUserSubject: BehaviorSubject<User>;
+  public currentUser: Observable<User>;
   // url = "http://localhost:8080/authenticate";
   httpOptions = {
     // tslint:disable-next-line:max-line-length
@@ -36,6 +36,17 @@ export class AuthService {
   userCreds: User;
   private authCall: Observable<any>;
 
+
+  constructor(private httpClient: HttpClient) {
+  //  checking to see if user is authorized
+    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(sessionStorage.getItem('AUTHENTICATED_USER')));
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+  public get currentUserValue(): User {
+    return this.currentUserSubject.value;
+  }
+
   public authenticate(data){
     this.userCreds={username: data.userName, password: data.password}
      this.authCall = this.httpClient.post<any>( `${API_URL}`,
@@ -49,6 +60,7 @@ export class AuthService {
 
             sessionStorage.setItem(AUTHENTICATED_USER, data.userName);
             sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+            this.currentUserSubject.next(data);
             return data;
       }
       ));

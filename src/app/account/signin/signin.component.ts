@@ -16,10 +16,10 @@ import {AuthService} from "../../services/authentication/auth-service.service";
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private httpService: AuthService, private fb: FormBuilder, private router: Router) {}
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-
+      this.authService.logout();
   }
 
   public loginForm: FormGroup = this.fb.group({
@@ -48,12 +48,10 @@ export class SigninComponent implements OnInit {
 
   onClickSubmitAuthorization() {
     // console.warn(this.loginForm.value);
-    this.httpService.authenticate(this.loginForm.value)
+    this.authService.authenticate(this.loginForm.value)
       .subscribe(d => {
           console.log('User LoggedIn');
-          //todo need to figure out where to redirect this call
-          // this.router.navigate(['/client/view'])
-          this.router.navigate(["/"]);
+          this.router.navigate(["/view"]);
         },
         error => { console.log(error)
         },
