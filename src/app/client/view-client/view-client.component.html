@@ -26,8 +26,14 @@
               <tbody>
               <tr *ngFor="let client of clients">
                 <th scope="row">{{client.id}}</th>
-                <td>{{client.userInfo.name}}</td>
+                <td>{{client.email}}</td>
                 <td>{{client.userInfo.phoneNumber || "NA" }}</td>
+                <td>{{client.userInfo.address}}</td>
+                <td>{{client.userInfo.city}}</td>
+                <td>{{client.userInfo.state}}</td>
+                <td>{{client.userInfo.zipcode}}</td>
+                <td>{{client.userInfo.companyName}}</td>
+                <td>{{client.userInfo.address}}</td>
                 <td>{{client.userInfo.address}}</td>
               </tr>
 

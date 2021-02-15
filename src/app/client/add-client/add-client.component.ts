@@ -17,8 +17,6 @@ export class AddClientComponent implements OnInit {
     fname: [''],
     lname: [''],
     userName: [''],
-    password: [''],
-    passwordConfirm: [''],
     streetAddress: [''],
     city: [''],
     state: [''],
@@ -36,7 +34,7 @@ export class AddClientComponent implements OnInit {
       .subscribe(d => {
           console.log('Added new User');
           //todo need to figure out where to redirect this call
-          this.router.navigate(['/view'])
+          this.router.navigate(['/error/500'])
         },
         error => {
           console.log(error)

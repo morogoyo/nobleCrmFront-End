@@ -70,6 +70,7 @@ export class ClientService {
       gender: data.gender,
       email: data.email
 
+
     }
 
     console.log(this.client.toString())

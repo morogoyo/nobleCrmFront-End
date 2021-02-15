@@ -3,6 +3,7 @@ import { LockscreenComponent } from "./lockscreen/lockscreen.component";
 import { Routes } from "@angular/router";
 import { SigninComponent } from "./signin/signin.component";
 import { SignupComponent } from "./signup/signup.component";
+import {AuthGuard} from "../_helpers/auth.guard";
 
 export const AccountRoutes: Routes = [
   {
@@ -10,19 +11,23 @@ export const AccountRoutes: Routes = [
     children: [
       {
         path: "signin",
-        component: SigninComponent
+        component: SigninComponent,
+
       },
       {
         path: "signup",
-        component: SignupComponent
+        component: SignupComponent,
+
       },
       {
         path: "forgot",
-        component: ForgotComponent
+        component: ForgotComponent,
+
       },
       {
         path: "lockscreen",
-        component: LockscreenComponent
+        component: LockscreenComponent,
+
       }
     ]
   }

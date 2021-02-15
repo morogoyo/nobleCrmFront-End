@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, ViewChild } from "@angular/core";
 
 import { TranslateService } from "@ngx-translate/core";
+import {AuthService} from "../../services/authentication/auth-service.service";
 
 @Component({
   selector: "app-sidebar",
@@ -22,7 +23,7 @@ export class SidebarComponent {
   @Output()
   toggleFullscreen = new EventEmitter<void>();
 
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService, private authService: AuthService) {
     const browserLang: string = translate.getBrowserLang();
     translate.use(browserLang.match(/en|fr/) ? browserLang : "en");
   }
@@ -34,5 +35,9 @@ export class SidebarComponent {
   setTheme(theme) {
     this.options.theme = theme;
     this.sendMessage();
+  }
+
+  logUserOut(){
+    this.authService.logout();
   }
 }
