@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-authenticate',
   templateUrl: 'authenticate.component.html',
-  templateUrl: './authenticate.component.html',
+  // templateUrl: './authenticate.component.html',
   styleUrls: []
 })
 export class AuthenticateComponent implements OnInit {
@@ -36,7 +36,6 @@ export class AuthenticateComponent implements OnInit {
     this.httpService.authenticate(this.loginForm.value)
       .subscribe(d => {
         console.log('LoggedIn User');
-        //todo need to figure out where to redirect this call
           this.router.navigate(['/client/view'])
         },
             error => { console.log(error)
