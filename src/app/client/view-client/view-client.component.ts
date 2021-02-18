@@ -4,7 +4,7 @@ import {ClientService} from "../../services/client/client.service";
 @Component({
   selector: 'app-view-client',
   templateUrl: './view-client.component.html',
-  styleUrls: ['./view-client.component.css']
+  styleUrls: ['./view-client.component.scss']
 })
 export class ViewClientComponent implements OnInit {
 
@@ -13,12 +13,13 @@ export class ViewClientComponent implements OnInit {
   constructor(private clientService: ClientService) { }
 
   ngOnInit(): void {
+    this.getAllClients();
   }
 
-  function(){ this.clientService.getClients().subscribe((data: any[]) => {
-    console.log(data);
-    this.clients = data;
-  })
+  getAllClients() {
+    this.clientService.getClients().subscribe((data) => {
+      console.log( data);
+      this.clients = data;
+    })
   }
-
 }

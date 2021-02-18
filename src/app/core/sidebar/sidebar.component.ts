@@ -1,0 +1,43 @@
+import { Component, EventEmitter, Output, ViewChild } from "@angular/core";
+
+import { TranslateService } from "@ngx-translate/core";
+import {AuthService} from "../../services/authentication/auth-service.service";
+
+@Component({
+  selector: "app-sidebar",
+  templateUrl: "./sidebar.component.html",
+  styleUrls: ["./sidebar.component.scss"]
+})
+export class SidebarComponent {
+  options = {
+    lang: "en",
+    theme: "winter",
+    settings: false,
+    docked: false,
+    boxed: false,
+    opened: false
+  };
+
+  @Output()
+  messageEvent = new EventEmitter();
+  @Output()
+  toggleFullscreen = new EventEmitter<void>();
+
+  constructor(public translate: TranslateService, private authService: AuthService) {
+    const browserLang: string = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|fr/) ? browserLang : "en");
+  }
+
+  sendMessage() {
+    this.messageEvent.emit(this.options);
+  }
+
+  setTheme(theme) {
+    this.options.theme = theme;
+    this.sendMessage();
+  }
+
+  logUserOut(){
+    this.authService.logout();
+  }
+}

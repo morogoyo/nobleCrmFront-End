@@ -1,20 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/a', pathMatch: 'full' },
-  // { path: '/clients', redirectTo:'/edit'}
-  // { path: '/clients' redirectTo:'/edi'}
-  // { path: '**', component: PageNotFoundComponent }
+  {path: '', redirectTo: '/admin/auth', pathMatch: 'full'},
+  {path: 'client', loadChildren: () => import('./client/client.module').then(c => c.ClientModule)},
+  {path: 'admin' , loadChildren: () => import('./admin/authenticate.module').then(a => a.AdminModule)},
+  {path: '', redirectTo: 'admin/auth', pathMatch: 'full'},
+
+
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
       routes,
-      { enableTracing: true } // <-- debugging purposes only
-  )],
+      {enableTracing: true} // <-- debugging purposes only
+    )],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
