@@ -5,11 +5,13 @@
   <h1>Click to test this page</h1>
   <button (click)="getAllClients()">for fucks sake click me now</button>
   {{clients |json}}
-  <p *ngFor="let client of clients">{{ client.userName }} has these assests {{client.userInfo.email}}</p>
+  <p *ngFor="let client of clients">{{ client.userName }} has these assests {{client.email}}</p>
 </div>
 <!--////////////////////////-->
-
-      <div class="col-lg-6 col-md-12 mb-4">
+<p>//////////////////////////////////////////////////////////////////////////////////</p>
+{{clients |json}}
+<p>//////////////////////////////////////////////////////////////////////////////////</p>
+      <div class="col-lg-12 col-md-12 mb-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Striped Rows</h5>
@@ -17,24 +19,35 @@
             <table class="table table-striped">
               <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID#</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Email</th>
+                <th scope="col">phoneNumber</th>
+                <th scope="col">address</th>
+                <th scope="col">city</th>
+                <th scope="col">state</th>
+                <th scope="col">zipcode</th>
+                <th scope="col">companyName</th>
+                <th scope="col">address</th>
               </tr>
               </thead>
               <tbody>
-              <tr *ngFor="let client of clients">
-                <th scope="row">{{client.id}}</th>
-                <td>{{client.email}}</td>
+              <tr *ngFor=" let client of clients ">
+
+                <td scope="row">{{client.id}}</td>
+                <td scope="row">{{client.userInfo.fname}}</td>
+                <td scope="row">{{client.userInfo.lname}}</td>
+                <td>{{client.userInfo.email}}</td>
                 <td>{{client.userInfo.phoneNumber || "NA" }}</td>
-                <td>{{client.userInfo.address}}</td>
-                <td>{{client.userInfo.city}}</td>
-                <td>{{client.userInfo.state}}</td>
-                <td>{{client.userInfo.zipcode}}</td>
-                <td>{{client.userInfo.companyName}}</td>
-                <td>{{client.userInfo.address}}</td>
-                <td>{{client.userInfo.address}}</td>
+                <td>{{client.userInfo.address || "NA"}}</td>
+                <td>{{client.userInfo.city || "NA"}}</td>
+                <td>{{client.userInfo.state || "NA"}}</td>
+                <td>{{client.userInfo.zipcode || "NA"}}</td>
+                <td>{{client.userInfo.companyName || "NA"}}</td>
+                <td>{{client.clientAssests.adminurl || "NA"}}</td>
+                <td>{{client.clientAssests.services || "NA"}}</td>
+                <td>{{client.clientAssests.siteurl || "NA"}}</td>
               </tr>
 
               </tbody>
