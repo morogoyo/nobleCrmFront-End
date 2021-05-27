@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {  ACCESS_CONTROL_ALLOW_HEADERS,
-          ACCESS_CONTROL_ALLOW_METHODS,
-          ACCESS_CONTROL_ALLOW_ORIGIN, AuthService,
-          CONTENT_TYPE,
-          ORIGIN
-        } from "../authentication/auth-service.service";
+import {  AuthService  } from "../authentication/auth-service.service";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -13,9 +8,7 @@ import {Observable} from "rxjs";
 })
 export class HttpJWTInterceptorService implements HttpInterceptor {
 
-  constructor(
-    private authService: AuthService
-  ) {
+  constructor(private authService: AuthService ) {
   }
 
   httpOptions;
@@ -26,16 +19,17 @@ export class HttpJWTInterceptorService implements HttpInterceptor {
     let username = this.authService.getAuthenticatedUser();
 
 
-    if (token) {
+    if (token && username) {
       console.log(token, username)
-      req = req.clone({
+      const newReq = req.clone({
         setHeaders: {
           "Authorization": token
         }
-      })
+      });
+      return next.handle(newReq); //edited request headers
     }
 
-    return next.handle(req);
+    return next.handle(req); // non-edited request headers
   };
 
 

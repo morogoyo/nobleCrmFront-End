@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators
 } from "@angular/forms";
@@ -19,7 +18,7 @@ export class SigninComponent implements OnInit {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-      this.authService.logout();
+      // this.authService.logout();
   }
 
   public loginForm: FormGroup = this.fb.group({
@@ -28,30 +27,16 @@ export class SigninComponent implements OnInit {
   });
 
 
-  // loginForm = this.fb.group({
-  //   // fname: [''],
-  //   // lname: [''],
-  //   userName: [''],
-  //   password: [''],
-  //   // streetAddress: [''],
-  //   // city: [''],
-  //   // state: [''],
-  //   // zipcode: [''],
-  //   // dateOfBirth: [''],
-  //   // gender: [''],loginForm
-  //   // email: ['']
-  // });
-
   onSubmit() {
     this.router.navigate(["/"]);
   }
 
   onClickSubmitAuthorization() {
     // console.warn(this.loginForm.value);
-    this.authService.authenticate(this.loginForm.value)
+    this.authService.login(this.loginForm.value)
       .subscribe(d => {
           console.log('User LoggedIn');
-          this.router.navigate(["/view"]);
+          this.router.navigate(["/view"]).then();
         },
         error => { console.log(error)
         },

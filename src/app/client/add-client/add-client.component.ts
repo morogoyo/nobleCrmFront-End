@@ -17,6 +17,7 @@ export class AddClientComponent implements OnInit {
     fname: [''],
     lname: [''],
     userName: [''],
+    passWord: [''],
     streetAddress: [''],
     city: [''],
     state: [''],
