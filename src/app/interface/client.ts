@@ -2,15 +2,18 @@ export interface Client {
 
   fname: string
   lname: string
-  userName: string
+  username: string
   password: string
   passwordConfirm: string
   streetAddress: string
   city: string
   state: string
-  zipcode: number
+  zip: number
   dateOfBirth: string
   gender: string
   email: string
+  role: string
+  userInfo: object
+  clientAssets: object
 
 }

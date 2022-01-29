@@ -24,7 +24,8 @@ export class ClientService {
 
   private REST_API_SERVER = `${REST_API_SERVER}`;
   private uri: string;
-  private client: Client;
+  private client: { fname: any; userInfo: { zip: any; gender: any; streetAddress: any; city: any; dateOfBirth: any; state: any };
+    clientAssets: { email: any; id: any; adminURL: any; siteURL: any; services: any }; lname: any; password: any; role: any; passwordConfirm: any; email: any; username: any };
 
 
 
@@ -59,16 +60,27 @@ export class ClientService {
     this.client = {
       fname: data.fname,
       lname: data.lname,
-      userName: data.userName,
+      username: data.username,
       password: data.password,
       passwordConfirm: data.passwordConfirm,
-      streetAddress: data.streetAddress,
-      city: data.city,
-      state: data.state,
-      zipcode: data.zipcode,
-      dateOfBirth: data.dateOfBirth,
-      gender: data.gender,
-      email: data.email
+      userInfo: {
+        streetAddress: data.streetAddress,
+        city: data.city,
+        state: data.state,
+        zip: data.zip,
+        dateOfBirth: data.dateOfBirth,
+        gender: data.gender
+      },
+      clientAssets: {
+        email: data.email,
+        id: data.id,
+        adminURL: data.adminURL,
+        siteURL: data.siteURL,
+        services: data.services
+      },
+
+      email: data.email,
+      role: data.role
 
 
     }
