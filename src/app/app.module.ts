@@ -1,25 +1,77 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {
+  AccordionAnchorDirective,
+  AccordionDirective,
+  AccordionLinkDirective,
+  AdminLayoutComponent,
+  AuthLayoutComponent,
+  FooterComponent,
+  HeaderComponent,
+  MenuComponent,
+  SidebarComponent
+} from "./core";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
-import {ClientModule} from "./client/client.module";
+
+import { AppComponent } from "./app.component";
+import { AppRoutes } from "./app.routing";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from "@angular/platform-browser";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { NgModule } from "@angular/core";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { RouterModule } from "@angular/router";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import {TokenizeResult} from "@angular/compiler/src/ml_parser/lexer";
+import { HttpJWTInterceptorService } from './services/httpInterceptor/http-jwt-interceptor.service';
+import { AuthenticateComponent } from './admin/authenticate/authenticate.component';
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    HeaderComponent,
+    SidebarComponent,
+    FooterComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent,
+    AccordionAnchorDirective,
+    AccordionLinkDirective,
+    AccordionDirective,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(AppRoutes),
+    FormsModule,
     HttpClientModule,
-    ClientModule
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
+    LoadingBarRouterModule,
+    NgbModule,
+    MatSidenavModule,
+    ReactiveFormsModule
 
   ],
-  providers: [],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpJWTInterceptorService,
+    multi: true
+  }]
 })
-export class AppModule { }
+export class AppModule {}
