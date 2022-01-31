@@ -30,7 +30,6 @@ export class AuthService {
     headers: new HttpHeaders({
       'Content-Type': CONTENT_TYPE,
       'Access-Control-Allow-Origin': ACCESS_CONTROL_ALLOW_ORIGIN,
-      'Origin': ORIGIN,
       'Access-Control-Allow-Methods': ACCESS_CONTROL_ALLOW_METHODS,
       'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS
     })
@@ -77,7 +76,7 @@ export class AuthService {
   logout() {
     console.log("logging out");
     localStorage.setItem(AUTHENTICATED_USER, "");
-    localStorage.setItem(TOKEN, `Bearer 123123123123123123123456456465798798798`);
+    localStorage.setItem(TOKEN, "");
   }
 
   refreshToken() {

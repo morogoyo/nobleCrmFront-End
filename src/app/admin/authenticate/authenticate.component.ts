@@ -29,7 +29,8 @@ export class AuthenticateComponent implements OnInit {
     this.httpService.login(this.loginForm.value)
       .subscribe(d => {
         console.log('LoggedIn User');
-          this.router.navigate(['/client/view']).then();
+        console.log(d.valueOf())
+          this.router.navigate(['/account/signin']).then();
         },
             error => { console.log(error)
         },

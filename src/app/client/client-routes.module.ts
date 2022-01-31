@@ -8,9 +8,13 @@ import {ClientAssetsComponent} from "./client-assets/client-assets.component";
 
 const clientRoutesModule: Routes = [
 
-  {path: 'add', component: AddClientComponent, canActivate: [AuthGuard]},
-  {path: 'view', component: ViewClientComponent, canActivate: [AuthGuard]},
-  {path: 'admin-url', component: ClientAssetsComponent, canActivate: [AuthGuard]}
+  // {path: 'add', component: AddClientComponent, canActivate: [AuthGuard]},
+  // {path: 'view', component: ViewClientComponent, canActivate: [AuthGuard]},
+  // {path: 'admin-url', component: ClientAssetsComponent, canActivate: [AuthGuard]}
+
+  {path: 'add', component: AddClientComponent},
+  {path: 'view', component: ViewClientComponent},
+  {path: 'admin-url', component: ClientAssetsComponent}
 ];
 
 @NgModule({

@@ -13,7 +13,7 @@ export const DashboardRoutes: Routes = [
     },
     children: [
       {
-        path: "",
+        path: "/client",
         loadChildren: () =>
           import("../client/client.module").then(m => m.ClientModule)
       }
