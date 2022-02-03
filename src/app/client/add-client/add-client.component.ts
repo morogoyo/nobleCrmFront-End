@@ -16,14 +16,19 @@ export class AddClientComponent implements OnInit {
   insertClient = this.fb.group({
     fname: [''],
     lname: [''],
-    userName: [''],
+    username: [''],
+    password: [''],
     streetAddress: [''],
     city: [''],
     state: [''],
-    zipcode: [''],
+    zip: [''],
     dateOfBirth: [''],
     gender: [''],
-    email: ['']
+    email: [''],
+    role: [''],
+    adminURL: [''],
+    siteURL: [''],
+    services: [''],
   });
 
   testVariable = [];
@@ -34,7 +39,7 @@ export class AddClientComponent implements OnInit {
       .subscribe(d => {
           console.log('Added new User');
           //todo need to figure out where to redirect this call
-          this.router.navigate(['/error/500'])
+          this.router.navigate(['/'])
         },
         error => {
           console.log(error)

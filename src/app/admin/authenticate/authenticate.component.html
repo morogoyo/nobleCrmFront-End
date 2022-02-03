@@ -34,7 +34,7 @@
 <!--              <span class="logo-single"></span>-->
 <!--            </a>-->
             <h6 class="mb-4">Login</h6>
-            <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization" >
+            <form [formGroup]="loginForm" (ngSubmit) = "onClickSubmitAuthorization()" >
               <label class="form-group has-float-label mb-4">
                 <input type="text" class="form-control" name="userName" placeholder="User"
                         formControlName="userName">

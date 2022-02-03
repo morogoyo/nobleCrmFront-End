@@ -17,7 +17,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutes } from "./app.routing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoadingBarRouterModule } from "@ngx-loading-bar/router";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { NgModule } from "@angular/core";
@@ -26,6 +26,7 @@ import { RouterModule } from "@angular/router";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import {TokenizeResult} from "@angular/compiler/src/ml_parser/lexer";
 import { HttpJWTInterceptorService } from './services/httpInterceptor/http-jwt-interceptor.service';
+import { AuthenticateComponent } from './admin/authenticate/authenticate.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -44,7 +45,8 @@ export function createTranslateLoader(http: HttpClient) {
     AuthLayoutComponent,
     AccordionAnchorDirective,
     AccordionLinkDirective,
-    AccordionDirective
+    AccordionDirective,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     LoadingBarRouterModule,
     NgbModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ReactiveFormsModule
 
   ],
   bootstrap: [AppComponent],
