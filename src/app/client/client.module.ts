@@ -6,12 +6,14 @@ import {ClientRoutes} from "./client-routes.module";
 import {ClientService} from "../services/client/client.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ClientAssetsComponent } from './client-assets/client-assets.component';
+import { HtmltestComponent } from './htmltest/htmltest.component';
 
 @NgModule({
     declarations: [
         AddClientComponent,
         ViewClientComponent,
         ClientAssetsComponent,
+        HtmltestComponent,
 
 
     ],
