@@ -28,15 +28,16 @@ export class SigninComponent implements OnInit {
 
 
   onSubmit() {
-    this.router.navigate(["/"]);
+    // this.router.navigate(["/"]);
   }
 
   onClickSubmitAuthorization() {
     // console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value)
       .subscribe(d => {
-          console.log('User LoggedIn');
           this.router.navigate(["/view"]).then();
+          console.log('User LoggedIn');
+
         },
         error => { console.log(error)
         },
