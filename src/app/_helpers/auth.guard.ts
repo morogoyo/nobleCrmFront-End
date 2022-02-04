@@ -15,10 +15,10 @@ export class AuthGuard implements CanActivate {
     const currentUser = this.authService.user;
     if (this.authService.getAuthenticatedToken() != "" && this.authService.getAuthenticatedUser() != "") {
       console.log("Auth guard still needs logic")
-      return this.router.navigate(['/'], { queryParams: { returnUrl: state.url } });
+      return this.router.navigate(['client/view'], { queryParams: { returnUrl: state.url } });
 
     }else{
-      return this.router.navigate(['/account/signin'], { queryParams: { returnUrl: state.url } });
+      return this.router.navigate(['account/signin'], { queryParams: { returnUrl: state.url } });
 
 
     }

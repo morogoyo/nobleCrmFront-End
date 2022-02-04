@@ -1,7 +1,8 @@
 import { AdminLayoutComponent } from "./core";
 import { AuthLayoutComponent } from "./core";
 import { Routes } from "@angular/router";
-import {AuthGuard} from "./_helpers/auth.guard";
+import {SigninComponent} from "./account/signin/signin.component";
+
 
 export const AppRoutes: Routes = [
   {
@@ -11,7 +12,8 @@ export const AppRoutes: Routes = [
       {
         path: "",
         loadChildren: () =>
-          import("./dashboard/dashboard.module").then(m => m.DashboardModule)
+          import("./dashboard/dashboard.module").then(m => m.DashboardModule),
+
 
       },
       {
