@@ -99,22 +99,6 @@ const MENUITEMS = [
         name: "500"
       }
     ]
-  },
-  {
-    state: "dashboard",
-    name: "Client Administration",
-    type: "sub",
-    icon: "ion-ios-people",
-    children: [
-      {
-        state: "view",
-        name: "VIEW"
-      },
-      {
-        state: "add",
-        name: "ADD"
-      }
-    ]
   }
 ];
 

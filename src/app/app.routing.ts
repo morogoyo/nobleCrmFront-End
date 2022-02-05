@@ -35,11 +35,6 @@ export const AppRoutes: Routes = [
         path: "error",
         loadChildren: () =>
           import("./error/error.module").then(m => m.ErrorModule)
-      },
-      {
-        path: "dashboard",
-        loadChildren: () =>
-          import("./dashboard/dashboard.module").then(m => m.DashboardModule)
       }
     ]
   },

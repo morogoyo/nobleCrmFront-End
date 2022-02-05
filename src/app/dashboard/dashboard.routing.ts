@@ -10,7 +10,7 @@ export const DashboardRoutes: Routes = [
     data: {heading: "Dashboard" },
     children: [
       {
-        path: "/client",
+        path: "client",
         loadChildren: () =>
           import("../client/client.module").then(m => m.ClientModule)
       }

@@ -35,7 +35,7 @@ export class SigninComponent implements OnInit {
     // console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value)
       .subscribe(d => {
-          this.router.navigate(["dashboard/view"]).then();
+          this.router.navigate(["client","view"]).then();
           console.log('User LoggedIn');
 
         },

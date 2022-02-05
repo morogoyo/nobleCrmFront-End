@@ -3,7 +3,7 @@ import { LockscreenComponent } from "./lockscreen/lockscreen.component";
 import { Routes } from "@angular/router";
 import { SigninComponent } from "./signin/signin.component";
 import { SignupComponent } from "./signup/signup.component";
-import {AuthGuard} from "../_helpers/auth.guard";
+
 
 export const AccountRoutes: Routes = [
   {

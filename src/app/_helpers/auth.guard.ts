@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import {AuthService} from "../services/authentication/auth-service.service";
+import {AUTHENTICATED_USER, AuthService, TOKEN} from "../services/authentication/auth-service.service";
 
 
 
@@ -13,14 +13,14 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const currentUser = this.authService.user;
-    if (this.authService.getAuthenticatedToken() != "" && this.authService.getAuthenticatedUser() != "") {
+    if (this.authService.userValue) {
       console.log("Auth guard still needs logic")
-      return this.router.navigate(['client/view'], { queryParams: { returnUrl: state.url } });
-
+      console.log(this.authService.getAuthenticatedUser(), this.authService.getAuthenticatedToken())
+      console.log(this.authService.userValue)
+      // return this.router.navigate(['client','view'], {queryParams: {returnUrl: state.url}});
+          return true
     }else{
-      return this.router.navigate(['account/signin'], { queryParams: { returnUrl: state.url } });
-
-
+      return this.router.navigate(['account','signin'], { queryParams: { returnUrl: state.url } });
     }
 
 
