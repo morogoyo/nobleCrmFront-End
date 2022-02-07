@@ -15,5 +15,6 @@ export const DashboardRoutes: Routes = [
           import("../client/client.module").then(m => m.ClientModule)
       }
       ]
-  }
+  },
+
 ];

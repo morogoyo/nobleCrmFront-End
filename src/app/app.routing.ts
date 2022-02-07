@@ -2,6 +2,7 @@ import { AdminLayoutComponent } from "./core";
 import { AuthLayoutComponent } from "./core";
 import { Routes } from "@angular/router";
 import {SigninComponent} from "./account/signin/signin.component";
+import {AuthGuard} from "./_helpers/auth.guard";
 
 
 export const AppRoutes: Routes = [
@@ -13,6 +14,7 @@ export const AppRoutes: Routes = [
         path: "",
         loadChildren: () =>
           import("./dashboard/dashboard.module").then(m => m.DashboardModule),
+        canActivate: [AuthGuard]
 
 
       },
