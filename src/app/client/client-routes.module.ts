@@ -14,10 +14,6 @@ const clientRoutesModule: Routes = [
   {path: 'admin-url', component: ClientAssetsComponent, canActivate: [AuthGuard]},
   {path: 'test', component: HtmltestComponent, canActivate: [AuthGuard]}
 
-  // {path: 'add', component: AddClientComponent},
-  // {path: 'view', component: ViewClientComponent},
-  // {path: 'admin-url', component: ClientAssetsComponent},
-  // {path: 'test', component: HtmltestComponent}
 
 ];
 

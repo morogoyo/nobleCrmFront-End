@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../../interface/user";
-import {map, tap} from "rxjs/operators";
-import {Observable, BehaviorSubject} from "rxjs";
+import {map} from "rxjs/operators";
+import {BehaviorSubject, Observable} from "rxjs";
 import {API_URL_AUTH, REST_API_SERVER} from "../../app.constants";
 import {Router} from "@angular/router";
 
@@ -66,7 +66,7 @@ export class AuthService {
         localStorage.setItem(AUTHENTICATED_USER, `${data.userName}`);
         localStorage.setItem(TOKEN, `Bearer ${data.token}`);
         this.userSubject.next(data);
-        this.startRefreshTokenTimer();
+        // this.startRefreshTokenTimer();  Need to fix the refresh token method
         return data;
       }));
 
@@ -92,14 +92,16 @@ export class AuthService {
 
   private refreshTokenTimeout;
 
-  private startRefreshTokenTimer() {
-    // parse json object from base64 encoded jwt token
-    // const jwtToken = JSON.parse(atob(this.userValue.jwtToken.split('.')[1]));
 
+  // need to fix VVVVVVVVVV  method
+  private startRefreshTokenTimer() {
+    //parse json object from base64 encoded jwt token
+    const jwtToken = JSON.parse(atob(this.userValue.jwtToken.split('.')[1]));
+    //
     // set a timeout to refresh the token a minute before it expires
-    // const expires = new Date(jwtToken.exp * 1000);
-    // const timeout = expires.getTime() - Date.now() - (60 * 1000);
-    // this.refreshTokenTimeout = setTimeout(() => this.refreshToken().subscribe(), timeout);
+    const expires = new Date(jwtToken.exp * 1000);
+    const timeout = expires.getTime() - Date.now() - (60 * 1000);
+    this.refreshTokenTimeout = setTimeout(() => this.refreshToken().subscribe(), timeout);
   }
 
   private stopRefreshTokenTimer() {
@@ -119,80 +121,7 @@ export class AuthService {
 
 }
 
-// // private currentUserSubject: BehaviorSubject<User>;
-// private userSubject: BehaviorSubject<User>;
-// public currentUser: Observable<User>;
-// userCreds: User;
-// private authCall: Observable<any>;
-
-
-// // url = "http://localhost:8080/authenticate";
-// httpOptions = {
-//   // tslint:disable-next-line:max-line-length
-//   headers: new HttpHeaders({
-//     'Content-Type': CONTENT_TYPE,
-//     'Access-Control-Allow-Origin': ACCESS_CONTROL_ALLOW_ORIGIN,
-//     'Origin': ORIGIN,
-//     'Access-Control-Allow-Methods': ACCESS_CONTROL_ALLOW_METHODS,
-//     'Access-Control-Allow-Headers': ACCESS_CONTROL_ALLOW_HEADERS })
-// };
-//
-//
-//
-// constructor(private httpClient: HttpClient) {
-// //  checking to see if user is authorized
-//   this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('AUTHENTICATED_USER')));
-//   this.currentUser = this.currentUserSubject.asObservable();
-// }
-//
-// public get currentUserValue(): User {
-//   return this.currentUserSubject.value;
-// }
-//
-// public authenticate(data){
-//   this.userCreds={username: data.userName, password: data.password}
-//    this.authCall = this.httpClient.post<any>( \`${API_URL_AUTH}\`,
-//                                    this.userCreds,
-//                                     this.httpOptions)
-//     .pipe(
-//
-//           tap(data => console.log('inside authentication service method')),
-//           tap(data => console.log(data.toString())),
-//           map( data => {
-//           localStorage.setItem(AUTHENTICATED_USER, data.userName);
-//           localStorage.setItem(TOKEN, \`Bearer ${data.token}\`);
-//           // sessionStorage.setItem(AUTHENTICATED_USER, data.userName);
-//           // sessionStorage.setItem(TOKEN, \`Bearer ${data.token}\`);
-//           this.currentUserSubject.next(data);
-//           return data;
-//     }
-//     ));
-//
-//   return this.authCall
-//
-// }
-
-//
-// getAuthenticatedUser() {
-//   return localStorage.getItem(AUTHENTICATED_USER)
-// }
-//
-// getAuthenticatedToken() {
-//   if(this.getAuthenticatedUser())
-//     return localStorage.getItem(TOKEN)
-// }
-//
-// isUserLoggedIn() {
-//   let user = localStorage.getItem(AUTHENTICATED_USER)
-//   return !(user === null)
-// }
-//
-// logout(){
-//   localStorage.removeItem(AUTHENTICATED_USER)
-//   localStorage.removeItem(TOKEN)
-// }
-
-
+// Need to find out what this is doing before deleting
 export class AuthenticationBean {
   constructor(public message: string) {
   }
