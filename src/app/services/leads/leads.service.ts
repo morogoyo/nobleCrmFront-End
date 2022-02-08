@@ -47,13 +47,18 @@ export class LeadsService {
   }
 
   public addLeads(data): Observable<Client> {
+    // TODO: Need to fix first name issue on property details. issue is that I am not able to use the full name
+    // concatenation intead of creating a new property for it.
 
     this.client = {
       fname: data.fname,
       lname: data.lname,
-      username: data.username,
-      password: data.password,
-      passwordConfirm: data.passwordConfirm,
+      email: data.email,
+      password: '',
+      passwordConfirm: '',
+      role: '',
+      username: '',
+      clientAssets:{},
       userInfo: {
         streetAddress: data.streetAddress,
         city: data.city,
@@ -62,15 +67,36 @@ export class LeadsService {
         dateOfBirth: data.dateOfBirth,
         gender: data.gender
       },
-      clientAssets: {
-        email: data.email,
-        id: data.id,
-        adminURL: data.adminURL,
-        siteURL: data.siteURL,
-        services: data.services
-      },
-      email: data.email,
-      role: data.role
+      propertyDetails:{
+        ownerName: data.lname,
+        ownerMailingAddress: data.ownerMailingAddress,
+        numberOfBedrooms: data.numberOfBedrooms,
+        numberOfBathrooms: data.numberOfBathrooms,
+        aproxSqFt: data.aproxSqFt,
+        lotSizeSqFt: data.lotSizeSqFt,
+        yearBuilt: data.yearBuilt,
+        houseType: data.houseType,
+        estimatedValue: data.estimatedValue,
+        mortgageAmount: data.mortgageAmount,
+        mortgageDate: data.mortgageDate,
+        taxAssessedYear: data.taxAssessedYear,
+        taxAssessedValue: data.taxAssessedValue,
+        taxBilledAmount: data.taxBilledAmount,
+        lastSoldDate: data.lastSoldDate,
+        lastSoldPrice: data.lastSoldPrice,
+        priorSaleDate: data.priorSaleDate,
+        priorSalePrice: data.priorSalePrice,
+        isGarage: data.isGarage,
+        isBasement: data.isBasement,
+        expectedSalesPrice: data.expectedSalesPrice,
+        allCashSellingPrice: data.allCashSellingPrice,
+        realEstateAgent: data.realEstateAgent,
+        sellTiming: data.sellTiming,
+        vacant: data.vacant,
+        sellReason: data.sellReason,
+        delinquentRent: data.delinquentRent
+      }
+
     }
 
     console.log(this.client.toString())

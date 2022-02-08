@@ -14,7 +14,7 @@ export class AddLeadsComponent implements OnInit {
   constructor(private fb: FormBuilder, private httpService: LeadsService, private router: Router) {
   }
 
-  insertClient = this.fb.group({
+  insertLead = this.fb.group({
     fname: [''],
     lname: [''],
     primaryPhoneNumber: [''],
@@ -39,17 +39,16 @@ export class AddLeadsComponent implements OnInit {
     mortgageDate: [''],
     texAssessedYear: [''],
     taxAssessedValue: [''],
-    taxBilledAmont: [''],
+    taxBilledAmount: [''],
     lastSoldDate: [''],
     lastSoldPrice: [''],
     priorSaleDate: [''],
     priorSalePrice: [''],
     isGarage: [''],
     isBasement: [''],
-    exepectedSalesPrice: [''],
+    expectedSalesPrice: [''],
     AllCashSellingPrice: [''],
     realEstateAgent: [''],
-    mortgageAmount: [''],
     sellTiming: [''],
     vacant: [''],
     sellReason: [''],
@@ -60,11 +59,11 @@ export class AddLeadsComponent implements OnInit {
   testVariable = [];
 
   onClickSubmitClientData() {
-    console.warn(this.insertClient.value);
-    this.httpService.addClient(this.insertClient.value)
+    console.warn(this.insertLead.value);
+    this.httpService.addLeads(this.insertLead.value)
       .subscribe(d => {
-          console.log('Added new User');
-          //todo need to figure out where to redirect this call
+          console.log('Added new Lead');
+          //todo need to redirect to the leads view with kanban board.
           this.router.navigate(['/'])
         },
         error => {
