@@ -1,3 +1,7 @@
+
+import {UserInfo} from "./userInfo";
+import {ClientAssets} from "./clientAssets";
+
 export interface Client {
 
   fname: string
@@ -5,15 +9,8 @@ export interface Client {
   username: string
   password: string
   passwordConfirm: string
-  streetAddress: string
-  city: string
-  state: string
-  zip: number
-  dateOfBirth: string
-  gender: string
   email: string
   role: string
-  userInfo: object
-  clientAssets: object
-
+  userInfo: Record<string, UserInfo>
+  clientAssets: Record<string, ClientAssets>
 }
