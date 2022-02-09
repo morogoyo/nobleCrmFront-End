@@ -52,7 +52,7 @@ export class AddLeadsComponent implements OnInit {
     sellTiming: [''],
     vacant: [''],
     sellReason: [''],
-    delinquentRent: [''],
+    delinquentRent: ['']
 
   });
 

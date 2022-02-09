@@ -47,9 +47,9 @@ export class LeadsService {
   }
 
   public addLeads(data): Observable<Client> {
-    // TODO: Need to fix first name issue on property details. issue is that I am not able to use the full name
-    // concatenation intead of creating a new property for it.
-
+      /* TODO: Need to fix first name issue on property details. issue is that I am not able to use the full name
+       *  'continuation' concatenation intead of creating a new property for it.
+       */
     this.client = {
       fname: data.fname,
       lname: data.lname,
@@ -96,15 +96,63 @@ export class LeadsService {
         sellReason: data.sellReason,
         delinquentRent: data.delinquentRent
       }
-
     }
-
     console.log(this.client.toString())
-
     return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/add" , this.client, this.httpOptions);
+  }
 
-
-
-
+  public updateLeads(data): Observable<Client> {
+    /* TODO: Need to fix first name issue on property details. issue is that I am not able to use the full name
+     *  'continuation' concatenation instead of creating a new property for it.
+     */
+    this.client = {
+      fname: data.fname,
+      lname: data.lname,
+      email: data.email,
+      password: '',
+      passwordConfirm: '',
+      role: '',
+      username: '',
+      clientAssets:{},
+      userInfo: {
+        streetAddress: data.streetAddress,
+        city: data.city,
+        state: data.state,
+        zip: data.zip,
+        dateOfBirth: data.dateOfBirth,
+        gender: data.gender
+      },
+      propertyDetails:{
+        ownerName: data.lname,
+        ownerMailingAddress: data.ownerMailingAddress,
+        numberOfBedrooms: data.numberOfBedrooms,
+        numberOfBathrooms: data.numberOfBathrooms,
+        aproxSqFt: data.aproxSqFt,
+        lotSizeSqFt: data.lotSizeSqFt,
+        yearBuilt: data.yearBuilt,
+        houseType: data.houseType,
+        estimatedValue: data.estimatedValue,
+        mortgageAmount: data.mortgageAmount,
+        mortgageDate: data.mortgageDate,
+        taxAssessedYear: data.taxAssessedYear,
+        taxAssessedValue: data.taxAssessedValue,
+        taxBilledAmount: data.taxBilledAmount,
+        lastSoldDate: data.lastSoldDate,
+        lastSoldPrice: data.lastSoldPrice,
+        priorSaleDate: data.priorSaleDate,
+        priorSalePrice: data.priorSalePrice,
+        isGarage: data.isGarage,
+        isBasement: data.isBasement,
+        expectedSalesPrice: data.expectedSalesPrice,
+        allCashSellingPrice: data.allCashSellingPrice,
+        realEstateAgent: data.realEstateAgent,
+        sellTiming: data.sellTiming,
+        vacant: data.vacant,
+        sellReason: data.sellReason,
+        delinquentRent: data.delinquentRent
+      }
+    }
+    console.log(this.client.toString())
+    return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/add" , this.client, this.httpOptions);
   }
 }

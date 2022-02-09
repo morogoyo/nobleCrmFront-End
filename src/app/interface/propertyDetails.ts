@@ -27,5 +27,6 @@ export interface PropertyDetails {
   vacant: string
   sellReason: string
   delinquentRent: string
+  propertyDetails: string
 
 }

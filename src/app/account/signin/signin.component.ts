@@ -18,7 +18,9 @@ export class SigninComponent implements OnInit {
   constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-      // this.authService.logout();
+     if(this.authService.getAuthenticatedToken().includes("Bearer")){
+       this.router.navigate(["client","view"]).then();
+     }
   }
 
   public loginForm: FormGroup = this.fb.group({
