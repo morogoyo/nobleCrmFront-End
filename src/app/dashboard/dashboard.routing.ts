@@ -13,6 +13,11 @@ export const DashboardRoutes: Routes = [
         path: "client",
         loadChildren: () =>
           import("../client/client.module").then(m => m.ClientModule)
+      },
+      {
+        path: "leads",
+        loadChildren: () =>
+          import("../leads/leads.module").then(m => m.LeadsModule)
       }
       ]
   },
