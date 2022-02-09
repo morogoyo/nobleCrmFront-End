@@ -15,13 +15,14 @@ import {AuthService} from "../../services/authentication/auth-service.service";
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {}
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
+  }
 
   ngOnInit() {
-  if( this.authService.getAuthenticatedToken() ){
-    console.log("the init method fired")
-    this.router.navigate(["client","view"]);
-  }
+    if (this.authService.getAuthenticatedToken().includes("Bearer")) {
+      console.log("the init method fired and page has been re routhed to view page")
+      this.router.navigate(["client", "view"]).then();
+    }
   }
 
   public loginForm: FormGroup = this.fb.group({
@@ -38,17 +39,18 @@ export class SigninComponent implements OnInit {
     // console.warn(this.loginForm.value);
     this.authService.login(this.loginForm.value)
       .subscribe(d => {
-          this.router.navigate(["client","view"]).then();
+          this.router.navigate(["client", "view"]).then();
           console.log('User LoggedIn');
 
         },
-        error => { console.log(error)
+        error => {
+          console.log(error)
         },
-        () => {}
+        () => {
+        }
       );
 
   }
-
 
 
 }
