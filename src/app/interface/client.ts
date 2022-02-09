@@ -1,6 +1,7 @@
 
 import {UserInfo} from "./userInfo";
 import {ClientAssets} from "./clientAssets";
+import {PropertyDetails} from "./propertyDetails";
 
 export interface Client {
 
@@ -13,4 +14,5 @@ export interface Client {
   role: string
   userInfo: Record<string, UserInfo>
   clientAssets: Record<string, ClientAssets>
+  propertyDetails: Record<string, PropertyDetails>
 }

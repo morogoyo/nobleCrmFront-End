@@ -54,6 +54,12 @@ const MENUITEMS = [
     icon: "ion-ios-help"
   },
   {
+    state: "test",
+    name: "Test",
+    type: "link",
+    icon: "ion-ios-help"
+  },
+  {
     type: "divider"
   },
   {
