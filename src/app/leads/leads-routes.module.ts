@@ -6,7 +6,7 @@ import {AddLeadsComponent} from "./add-leads/add-leads.component";
 
 const clientRoutesModule: Routes = [
   // commented out this is mainly for show and use later
-  {path: 'add', component: AddLeadsComponent, canActivate: [AuthGuard]},
+  {path: 'add-leads', component: AddLeadsComponent},
   // {path: 'view', component: ViewClientComponent, canActivate: [AuthGuard]},
   // {path: 'admin-url', component: ClientAssetsComponent, canActivate: [AuthGuard]},
   // {path: 'test', component: HtmltestComponent, canActivate: [AuthGuard]}

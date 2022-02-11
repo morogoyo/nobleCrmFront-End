@@ -87,7 +87,7 @@ const MENUITEMS = [
       ]
   },
       {
-        state: "leads",
+        state: "",
         name: "Leads",
         type: "sub",
         icon: "ion-ios-people",
@@ -99,7 +99,7 @@ const MENUITEMS = [
           icon: "ion-ios-help"
         },
           {
-            state: "add",
+            state: "add-leads",
             name: "Add",
             type: "link",
             icon: "ion-ios-help"
