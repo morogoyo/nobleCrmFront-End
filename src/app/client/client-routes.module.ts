@@ -14,7 +14,6 @@ const clientRoutesModule: Routes = [
   {path: 'admin-url', component: ClientAssetsComponent, canActivate: [AuthGuard]},
   {path: 'test', component: HtmltestComponent, canActivate: [AuthGuard]}
 
-
 ];
 
 @NgModule({

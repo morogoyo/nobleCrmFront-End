@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const currentUser = this.authService.user;
-    if (this.authService.userValue) {
+    if (this.authService.getAuthenticatedToken()) {
       console.log("Auth guard still needs logic")
       console.log(this.authService.getAuthenticatedUser(), this.authService.getAuthenticatedToken())
       console.log(this.authService.userValue)
