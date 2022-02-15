@@ -83,30 +83,52 @@ const MENUITEMS = [
       {
         state: "forgot",
         name: "FORGOT"
-      },
-      {
-        state: "lockscreen",
-        name: "LOCKSCREEN"
       }
-    ]
+      ]
   },
-  {
-    state: "error",
-    name: "ERROR",
-    type: "sub",
-    icon: "ion-ios-information",
-    children: [
       {
-        state: "404",
-        name: "404"
-      },
+        state: "",
+        name: "Leads",
+        type: "sub",
+        icon: "ion-ios-people",
+        children: [
+          {
+          state: "view",
+          name: "View",
+          type: "link",
+          icon: "ion-ios-help"
+        },
+          {
+            state: "add-leads",
+            name: "Add",
+            type: "link",
+            icon: "ion-ios-help"
+          },
+          {
+            state: "test",
+            name: "Test",
+            type: "link",
+            icon: "ion-ios-help"
+          }
+        ]
+  },
       {
-        state: "500",
-        name: "500"
+        state: "error",
+        name: "ERROR",
+        type: "sub",
+        icon: "ion-ios-information",
+        children: [
+          {
+            state: "404",
+            name: "404"
+          },
+          {
+            state: "500",
+            name: "500"
+          }
+        ]
       }
-    ]
-  }
-];
+]
 
 @Injectable()
 export class MenuService {
