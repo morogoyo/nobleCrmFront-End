@@ -7,7 +7,7 @@ export const DashboardRoutes: Routes = [
   {
     path: "",
     component: DashboardComponent,
-    data: {heading: "Dashboard" },
+    data: {heading: "Asshole you are a fucking asshole" },
     children: [
       {
         path: "client",

@@ -14,6 +14,8 @@ export class AddLeadsComponent implements OnInit {
   constructor(private fb: FormBuilder, private httpService: LeadsService, private router: Router) {
   }
 
+  title = "Add Leads";
+
   insertLead = this.fb.group({
     fname: [''],
     lname: [''],
@@ -49,10 +51,26 @@ export class AddLeadsComponent implements OnInit {
     expectedSalesPrice: [''],
     AllCashSellingPrice: [''],
     realEstateAgent: [''],
+    currentMortgage: [''],
     sellTiming: [''],
     vacant: [''],
     sellReason: [''],
-    delinquentRent: ['']
+    delinquentRent: [''],
+    whoPaysForUtilities: [''],
+    vacantProperties: [''],
+    managementCompany: [''],
+    unitCount: [''],
+    leaseType: [''],
+    meteredUtilities: [''],
+    ownershipLength: [''],
+    taxes: [''],
+    insurance: [''],
+    unitMix: [''],
+    freeAndClearProperty: [''],
+    deferredMaintenance: [''],
+    ownerFinancing: ['']
+
+
 
   });
 

@@ -48,6 +48,12 @@ const MENUITEMS = [
     icon: "ion-ios-help"
   },
   {
+    state: "leads",
+    name: "Add",
+    type: "link",
+    icon: "ion-ios-help"
+  },
+  {
     state: "add",
     name: "Add",
     type: "link",
@@ -64,7 +70,59 @@ const MENUITEMS = [
   },
   {
     type: "title",
-    name: "EXTRAS"
+    name: "Fix routing set up"
+  },
+  {
+    state: "",
+    name: "CLIENT",
+    type: "sub",
+    icon: "ion-ios-people",
+    children: [
+      {
+        state: "add",
+        name: "Add-leads",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
+        state: "view",
+        name: "View",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
+        state: "test",
+        name: "Test",
+        type: "link",
+        icon: "ion-ios-help"
+      }
+    ]
+  },
+  {
+    state: "",
+    name: "Leads",
+    type: "sub",
+    icon: "ion-ios-people",
+    children: [
+      {
+        state: "leads",
+        name: "Add-leads",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
+        state: "view",
+        name: "View",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
+        state: "test",
+        name: "Test",
+        type: "link",
+        icon: "ion-ios-help"
+      }
+    ]
   },
   {
     state: "account",
@@ -86,32 +144,7 @@ const MENUITEMS = [
       }
       ]
   },
-      {
-        state: "",
-        name: "Leads",
-        type: "sub",
-        icon: "ion-ios-people",
-        children: [
-          {
-          state: "view",
-          name: "View",
-          type: "link",
-          icon: "ion-ios-help"
-        },
-          {
-            state: "add-leads",
-            name: "Add",
-            type: "link",
-            icon: "ion-ios-help"
-          },
-          {
-            state: "test",
-            name: "Test",
-            type: "link",
-            icon: "ion-ios-help"
-          }
-        ]
-  },
+
       {
         state: "error",
         name: "ERROR",

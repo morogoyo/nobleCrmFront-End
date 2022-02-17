@@ -1,191 +1,301 @@
-<h1>this is a test rene</h1>
+<div style="padding: 13px;">
+</div>
+<div id="wrapper">
+  <div class="d-flex flex-column" id="content-wrapper">
+    <div id="content">
+      <div class="container-fluid">
+        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+          <h3 class="text-dark mb-0">{{title}}</h3><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a></div>
 
-<div class="wrapper">
-  <div class="container-fluid">
-
-    <!-- start page title -->
-    <div class="row">
-      <div class="col-12">
-        <div class="page-title-box">
-          <div class="page-title-right">
-            <ol class="breadcrumb m-0">
-              <li class="breadcrumb-item"><a href="javascript: void(0);">Uplon</a></li>
-              <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
-              <li class="breadcrumb-item active">Form Masks</li>
-            </ol>
-          </div>
-          <h4 class="page-title">Form Masks</h4>
-        </div>
       </div>
     </div>
-    <!-- end page title -->
-
-    <div class="row">
-      <div class="col-12">
-        <div class="card-box">
-
-          <div>
-            <h4 class="header-title">Input Masks</h4>
-            <p class="sub-header mb-0">
-              Your awesome text goes here.Your awesome text goes here.
-            </p>
-
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="mt-4">
-                  <form action="#">
-                    <div class="form-group">
-                      <label>ISBN 1</label>
-                      <input type="text" placeholder="" data-mask="999-99-999-9999-9" class="form-control">
-                      <span class="font-13 text-muted">e.g "999-99-999-9999-9"</span>
+    <div>
+      <div class="container">
+        <div class="card card-register mx-auto mt-5">
+          <div class="card-header">Register an Account</div>
+          <div class="card-body">
+            <form [formGroup]="insertLead" (ngSubmit) = "onClickSubmitClientData()">
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-label-group">
+                      <input type="text" id="firstName" class="form-control" formControlName="fname" placeholder="First name" required="required" autofocus="autofocus">
+                      <label for="firstName">First name</label>
                     </div>
-                    <div class="form-group">
-                      <label>ISBN 2</label>
-                      <input type="text" placeholder="" data-mask="999 99 999 9999 9" class="form-control">
-                      <span class="font-13 text-muted">999 99 999 9999 9</span>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-label-group">
+                      <input type="text" id="lastName" class="form-control" placeholder="lname" required="required" formControlName="lname">
+                      <label for="lastName">Last name</label>
                     </div>
-                    <div class="form-group">
-                      <label>ISBN 3</label>
-                      <input type="text" placeholder="" data-mask="999/99/999/9999/9" class="form-control">
-                      <span class="font-13 text-muted">999/99/999/9999/9</span>
-                    </div>
-                    <div class="form-group">
-                      <label>IPV4</label>
-                      <input type="text" placeholder="" data-mask="999.999.999.9999" class="form-control">
-                      <span class="font-13 text-muted">192.168.110.310</span>
-                    </div>
-                    <div class="form-group">
-                      <label>IPV6</label>
-                      <input type="text" placeholder="" data-mask="9999:9999:9999:9:999:9999:9999:9999" class="form-control">
-                      <span class="font-13 text-muted">4deg:1340:6547:2:540:h8je:ve73:98pd</span>
-                    </div>
-
-                  </form>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" formControlName="email" placeholder="Email address" required="required" >
+                  <label for="inputEmail">Email address</label>
                 </div>
               </div>
 
-              <div class="col-sm-6">
-                <div class="mt-4">
-                  <form action="#">
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="username" class="form-control" formControlName="leadSource" placeholder="User Name" required="required" >
+                  <label for="inputEmail">leadSource</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="password" id="market" class="form-control" formControlName="market" placeholder="market" required="required" >
+                  <label for="market">market</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="streetAddress" class="form-control" formControlName="streetAddress" placeholder="Street Address" required="required" >
+                  <label for="inputEmail">Street Address</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="city" class="form-control" formControlName="city" placeholder="city" required="required" >
+                  <label for="inputEmail">city</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="state" class="form-control" formControlName="state" placeholder="state" required="required" >
+                  <label for="inputEmail">state</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="zip" class="form-control" formControlName="zip" placeholder="zip"  >
+                  <label for="inputEmail">zipcode</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="numberOfBedrooms" class="form-control" formControlName="numberOfBedrooms" placeholder="numberOfBedrooms"  >
+                  <label for="inputEmail">numberOfBedrooms</label>
+                </div>
 
-                    <div class="form-group">
-                      <label>Tax ID</label>
-                      <input type="text" placeholder="" data-mask="99-9999999" class="form-control">
-                      <span class="font-13 text-muted">99-9999999</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Phone</label>
-                      <input type="text" placeholder="" data-mask="(999) 999-9999" class="form-control">
-                      <span class="font-13 text-muted">(999) 999-9999</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Currency</label>
-                      <input type="text" placeholder="" data-mask="$ 999,999,999.99" class="form-control">
-                      <span class="font-13 text-muted">$ 999,999,999.99</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Date</label>
-                      <input type="text" placeholder="" data-mask="99/99/9999" class="form-control">
-                      <span class="font-13 text-muted">dd/mm/yyyy</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Date 2</label>
-                      <input type="text" placeholder="" data-mask="99-99-9999" class="form-control">
-                      <span class="font-13 text-muted">dd-mm-yyyy</span>
-                    </div>
-
-                  </form>
+                <div class="form-label-group">
+                  <input type="text" id="numberOfBathrooms" class="form-control" formControlName="numberOfBathrooms" placeholder="numberOfBathrooms"  >
+                  <label for="inputEmail">numberOfBathrooms</label>
                 </div>
               </div>
 
-            </div>
+
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="aproxSqFt" class="form-control" formControlName="aproxSqFt" placeholder="aproxSqFt"  >
+                  <label for="inputEmail">aproxSqFt</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="lotSizeSqFt" class="form-control" formControlName="lotSizeSqFt" placeholder="lotSizeSqFt"  >
+                  <label for="lotSizeSqFt">lotSizeSqFt</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="yearBuilt" class="form-control" formControlName="yearBuilt" placeholder="yearBuilt"  >
+                  <label for="yearBuilt">yearBuilt</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="houseType" class="form-control" formControlName="houseType" placeholder="houseType"  >
+                  <label for="houseType">houseType</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="estimatedValue" class="form-control" formControlName="estimatedValue" placeholder="estimatedValue"  >
+                  <label for="estimatedValue">estimatedValue</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="mortgageAmount" class="form-control" formControlName="mortgageAmount" placeholder="mortgageAmount"  >
+                  <label for="mortgageAmount">mortgageAmount</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="mortgageDate" class="form-control" formControlName="mortgageDate" placeholder="mortgageDate"  >
+                  <label for="mortgageDate">mortgageDate</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="texAssessedYear" class="form-control" formControlName="texAssessedYear" placeholder="texAssessedYear"  >
+                  <label for="texAssessedYear">texAssessedYear</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="taxAssessedValue" class="form-control" formControlName="taxAssessedValue" placeholder="taxAssessedValue"  >
+                  <label for="taxAssessedValue">taxAssessedValue</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="taxBilledAmount" class="form-control" formControlName="taxBilledAmount" placeholder="taxBilledAmount"  >
+                  <label for="taxBilledAmount">taxBilledAmount</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="lastSoldDate" class="form-control" formControlName="lastSoldDate" placeholder="lastSoldDate"  >
+                  <label for="lastSoldDate">lastSoldDate</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="priorSaleDate" class="form-control" formControlName="priorSaleDate" placeholder="priorSaleDate"  >
+                  <label for="priorSaleDate">priorSaleDate</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="isGarage" class="form-control" formControlName="isGarage" placeholder="isGarage"  >
+                  <label for="isGarage">isGarage</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="AllCashSellingPrice" class="form-control" formControlName="AllCashSellingPrice" placeholder="AllCashSellingPrice"  >
+                  <label for="AllCashSellingPrice">AllCashSellingPrice</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="realEstateAgent" class="form-control" formControlName="realEstateAgent" placeholder="realEstateAgent"  >
+                  <label for="realEstateAgent">realEstateAgent</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="currentMortgage" class="form-control" formControlName="currentMortgage" placeholder="currentMortgage"  >
+                  <label for="currentMortgage">currentMortgage</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="sellTiming" class="form-control" formControlName="sellTiming" placeholder="sellTiming"  >
+                  <label for="sellTiming">sellTiming</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="vacant" class="form-control" formControlName="vacant" placeholder="vacant"  >
+                  <label for="vacant">vacant</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="sellReason" class="form-control" formControlName="sellReason" placeholder="sellReason"  >
+                  <label for="sellReason">sellReason</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="delinquentRent" class="form-control" formControlName="delinquentRent" placeholder="delinquentRent"  >
+                  <label for="delinquentRent">delinquentRent</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="whoPaysForUtilities" class="form-control" formControlName="whoPaysForUtilities" placeholder="whoPaysForUtilities"  >
+                  <label for="whoPaysForUtilities">whoPaysForUtilities</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="vacantProperties" class="form-control" formControlName="vacantProperties" placeholder="vacantProperties"  >
+                  <label for="vacantProperties">vacantProperties</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="managementCompany" class="form-control" formControlName="managementCompany" placeholder="managementCompany"  >
+                  <label for="managementCompany">managementCompany</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="leaseType" class="form-control" formControlName="leaseType" placeholder="leaseType"  >
+                  <label for="leaseType">leaseType</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="meteredUtilities" class="form-control" formControlName="meteredUtilities" placeholder="meteredUtilities"  >
+                  <label for="meteredUtilities">meteredUtilities</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="ownershipLength" class="form-control" formControlName="ownershipLength" placeholder="ownershipLength"  >
+                  <label for="ownershipLength">ownershipLength</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="taxes" class="form-control" formControlName="taxes" placeholder="taxes"  >
+                  <label for="taxes">taxes</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="insurance" class="form-control" formControlName="insurance" placeholder="insurance"  >
+                  <label for="insurance">insurance</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="unitMix" class="form-control" formControlName="unitMix" placeholder="unitMix"  >
+                  <label for="unitMix">unitMix</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="freeAndClearProperty" class="form-control" formControlName="freeAndClearProperty" placeholder="freeAndClearProperty"  >
+                  <label for="freeAndClearProperty">freeAndClearProperty</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="deferredMaintenance" class="form-control" formControlName="deferredMaintenance" placeholder="deferredMaintenance"  >
+                  <label for="deferredMaintenance">deferredMaintenance</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="text" id="ownerFinancing" class="form-control" formControlName="ownerFinancing" placeholder="ownerFinancing"  >
+                  <label for="ownerFinancing">ownerFinancing</label>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-lg btn-shadow" type="submit">LOGIN</button>
+            </form>
           </div>
-
-
-          <div class="mt-5">
-            <h4 class="header-title">Auto Numberic</h4>
-            <p class="sub-header mb-0">
-              Your awesome text goes here.Your awesome text goes here.
-            </p>
-
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="mt-4">
-                  <form action="#">
-                    <div class="form-group">
-                      <label>Default</label>
-                      <input type="text" placeholder="" class="form-control autonumber" data-a-sep="." data-a-dec=",">
-                      <span class="font-13 text-muted">e.g. "1.234.567.890.123"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Auto Numeric ($)</label>
-                      <input type="text" placeholder="" data-a-sign="$ " class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "$ $ 1,234,567,890,123"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Auto Numeric (€)</label>
-                      <input type="text" placeholder="" data-a-sign="€ " class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "€ 1,234,567,890,123"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Auto Numeric (Rs.)</label>
-                      <input type="text" placeholder="" data-a-sign="Rs. " class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "Rs. 1,234,567,890,123"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>4 digit Group (¥)</label>
-                      <input type="text" placeholder="" data-d-group="4" data-a-sign="¥ " class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "¥ 1,2345,6789,0123"</span>
-                    </div>
-
-                  </form>
-
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="mt-4">
-                  <form action="#">
-                    <div class="form-group">
-                      <label>Auto Numeric (£)</label>
-                      <input type="text" placeholder="" data-a-sign="£ " class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "£ 1,234,567,890,123"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Auto Numeric (%)</label>
-                      <input type="text" placeholder="" data-a-sign="%" data-p-sign="s" class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "11%"</span>
-                    </div>
-                    <div class="form-group">
-                      <label>Maximum Value (0 - 9999)</label>
-                      <input type="text" placeholder="" data-v-max="9999" data-v-min="0" class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "9,999"</span>
-                    </div>
-
-                    <div class="form-group">
-                      <label>Range Value (-99.99 - 1000.00)</label>
-                      <input type="text" placeholder="" data-v-min="-99.99" data-v-max="1000.00" class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "1000 Or -99.99"</span>
-                    </div>
-
-                    <div class="form-group mb-0">
-                      <label>Bracket Value</label>
-                      <input type="text" placeholder="" data-a-sep="." data-a-dec="," data-v-min="-9999.99" data-v-max="0.00" data-n-bracket="(,)" class="form-control autonumber">
-                      <span class="font-13 text-muted">e.g. "(9,999.00)"</span>
-                    </div>
-
-                  </form>
-
-                </div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
-      </div><!-- end col-->
+      </div>
+      <div><hr/></div>
 
-    </div>
-    <!-- end row -->
-  </div> <!-- end container-fluid -->
+</div>
+  </div>
 </div>

@@ -16,11 +16,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     UpdateLeadsComponent,
     ReadLeadsComponent
   ],
-  imports: [
-    CommonModule,
-    LeadsRoutes,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        LeadsRoutes,
+        ReactiveFormsModule,
+
+    ]
 })
 
 export class LeadsModule {
