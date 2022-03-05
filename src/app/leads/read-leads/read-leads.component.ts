@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {LeadsService} from "../../services/leads/leads.service";
 
 @Component({
   selector: 'app-read-leads',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadLeadsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private leadService: LeadsService) {
+  }
+
+  leads: any;
 
   ngOnInit(): void {
   }
 
+  getAllLeads() {
+    this.leadService.getLeads().subscribe((data) => {
+      console.log(data);
+      this.leads = data;
+    })
+  }
 }

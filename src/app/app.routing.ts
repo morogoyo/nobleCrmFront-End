@@ -19,6 +19,15 @@ export const AppRoutes: Routes = [
 
       },
       {
+        path: "leads",
+        loadChildren: () =>
+          import("./leads/leads.module").then(m => m.LeadsModule),
+        canActivate: [AuthGuard]
+
+
+      },
+
+      {
         path: "docs",
         loadChildren: () => import("./docs/docs.module").then(m => m.DocsModule)
       }
@@ -43,5 +52,6 @@ export const AppRoutes: Routes = [
   {
     path: "**",
     redirectTo: "error/404"
-  }
+  },
+
 ];

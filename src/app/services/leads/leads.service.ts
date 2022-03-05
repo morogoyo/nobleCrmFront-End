@@ -23,7 +23,7 @@ export class LeadsService {
   // long time since I have done it
 
   private REST_API_SERVER = `${REST_API_SERVER}`;
-  private uri: string;
+  private uri = "/leads";
   private client: Client;
 
 
@@ -153,6 +153,6 @@ export class LeadsService {
       }
     }
     console.log(this.client.toString())
-    return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/add" , this.client, this.httpOptions);
+    return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/update" , this.client, this.httpOptions);
   }
 }
