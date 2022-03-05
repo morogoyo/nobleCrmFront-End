@@ -1,1 +1,93 @@
-<p>read-leads works!</p>
+<div class="col-lg-12 col-md-12 mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Striped Rows</h5>
+
+      <table class="table table-striped">
+        <thead>
+        <th scope="col">ID#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Email</th>
+        <th scope="col">phoneNumber</th>
+        <th scope="col">Street Address</th>
+        <th scope="col">city</th>
+        <th scope="col">state</th>
+        <th scope="col">zipcode</th>
+        <th scope="col">companyName</th>
+        <th scope="col">Owners Mailing address</th>
+        <th scope="col">realEstateAgent</th>
+        <th scope="col">priorSalePrice</th>
+        <th scope="col">priorSaleDate</th>
+        <th scope="col">lastSoldPrice</th>
+        <th scope="col">lastSoldDate</th>
+        <th scope="col">taxBilledAmount</th>
+        <th scope="col">taxAssessedValue</th>
+        <th scope="col">taxAssessedYear</th>
+        <th scope="col">mortgageDate</th>
+        <th scope="col">mortgageAmount</th>
+        <th scope="col">estimatedValue</th>
+        <th scope="col">houseType</th>
+        <th scope="col">yearBuilt</th>
+        <th scope="col">lotSizeSqFt</th>
+        <th scope="col">aproxSqFt</th>
+        <th scope="col">Number of Bathrooms</th>
+        <th scope="col">Number of Bedrooms</th>
+        <th scope="col">sellReason</th>
+        <th scope="col">delinquentRent</th>
+        <th scope="col">allCashSellingPrice</th>
+        <th scope="col">expectedSalesPrice</th>
+        <th scope="col">isBasement</th>
+        <th scope="col">isGarage</th>
+        <tbody>
+        <tr *ngFor=" let lead of leads ">
+
+          <td scope="row">{{lead.id || "NA" }}</td>
+          <td scope="row">{{lead.fname || "NA" }}</td>
+          <td scope="row">{{lead.lname || "NA" }}</td>
+          <td>{{lead.email || "NA" }}</td>
+          <td>{{lead.phoneNumber || "NA" }}</td>
+          <td>{{lead.address || "NA"}}</td>
+          <td>{{lead.city || "NA"}}</td>
+          <td>{{lead.state || "NA"}}</td>
+          <td>{{lead.zipcode || "NA"}}</td>
+          <td>{{lead.companyName || "NA"}}</td>
+
+
+
+
+          <td>{{lead.ownerMailingAddress || "NA"}}</td>
+          <td>{{lead.realEstateAgent|| "NA"}}</td>
+          <td>{{lead.priorSalePrice|| "NA"}}</td>
+          <td>{{lead.priorSaleDate|| "NA"}}</td>
+          <td>{{lead.lastSoldPrice|| "NA"}}</td>
+          <td>{{lead.lastSoldDate || "NA"}}</td>
+          <td>{{lead.taxBilledAmount || "NA"}}</td>
+          <td>{{lead.taxAssessedValue || "NA"}}</td>
+          <td>{{lead.taxAssessedYear || "NA"}}</td>
+          <td>{{lead.mortgageDate || "NA"}}</td>
+          <td>{{lead.mortgageAmount || "NA"}}</td>
+          <td>{{lead.estimatedValue || "NA"}}</td>
+          <td>{{lead.houseType || "NA"}}</td>
+          <td>{{lead.yearBuilt || "NA"}}</td>
+          <td>{{lead.lotSizeSqFt || "NA"}}</td>
+          <td>{{lead.aproxSqFt || "NA"}}</td>
+          <td>{{lead.numberOfBathrooms|| "NA"}}</td>
+          <td>{{lead.Number of Bedrooms || "NA"}}</td>
+          <td>{{lead.sellReason || "NA"}}</td>
+          <td>{{lead.delinquentRent || "NA"}}</td>
+          <td>{{lead.allCashSellingPrice || "NA"}}</td>
+          <td>{{lead.expectedSalesPrice || "NA"}}</td>
+          <td>{{lead.isBasement || "NA"}}</td>
+          <td>{{lead.isGarage || "NA"}}</td>
+          <!--                <td>{{lead.clientAssests.adminurl || "NA"}}</td>
+                          <td>{{lead.clientAssests.services || "NA"}}</td>
+                          <td>{{lead.clientAssests.siteurl || "NA"}}</td>-->
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
