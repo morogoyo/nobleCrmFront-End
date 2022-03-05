@@ -43,19 +43,25 @@ const MENUITEMS = [
 
   {
     state: "view",
-    name: "View",
+    name: "View-Clients",
     type: "link",
     icon: "ion-ios-help"
   },
   {
-    state: "leads",
-    name: "Add",
+    state: "readleads",
+    name: "view-leads",
+    type: "link",
+    icon: "ion-ios-help"
+  },
+  {
+    state: "addleads",
+    name: "Add-leads",
     type: "link",
     icon: "ion-ios-help"
   },
   {
     state: "add",
-    name: "Add",
+    name: "Add-Clients",
     type: "link",
     icon: "ion-ios-help"
   },
@@ -105,13 +111,13 @@ const MENUITEMS = [
     icon: "ion-ios-people",
     children: [
       {
-        state: "leads",
+        state: "addleads",
         name: "Add-leads",
         type: "link",
         icon: "ion-ios-help"
       },
       {
-        state: "view",
+        state: "readleads",
         name: "View",
         type: "link",
         icon: "ion-ios-help"

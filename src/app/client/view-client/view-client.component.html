@@ -23,19 +23,19 @@
               <tbody>
               <tr *ngFor=" let client of clients ">
 
-                <td scope="row">{{clients.id}}</td>
-                <td scope="row">{{clients.userInfo.fname}}</td>
-                <td scope="row">{{clients.userInfo.lname}}</td>
-                <td>{{clients.userInfo.email}}</td>
-                <td>{{clients.userInfo.phoneNumber || "NA" }}</td>
-                <td>{{clients.userInfo.address || "NA"}}</td>
-                <td>{{clients.userInfo.city || "NA"}}</td>
-                <td>{{clients.userInfo.state || "NA"}}</td>
-                <td>{{clients.userInfo.zipcode || "NA"}}</td>
-                <td>{{clients.userInfo.companyName || "NA"}}</td>
-<!--                <td>{{clients.clientAssests.adminurl || "NA"}}</td>
-                <td>{{clients.clientAssests.services || "NA"}}</td>
-                <td>{{clients.clientAssests.siteurl || "NA"}}</td>-->
+                <td scope="row">{{client.id}}</td>
+                <td scope="row">{{client.userInfo.fname}}</td>
+                <td scope="row">{{client.userInfo.lname}}</td>
+                <td>{{client.userInfo.email}}</td>
+                <td>{{client.userInfo.phoneNumber || "NA" }}</td>
+                <td>{{client.userInfo.address || "NA"}}</td>
+                <td>{{client.userInfo.city || "NA"}}</td>
+                <td>{{client.userInfo.state || "NA"}}</td>
+                <td>{{client.userInfo.zipcode || "NA"}}</td>
+                <td>{{client.userInfo.companyName || "NA"}}</td>
+<!--                <td>{{client.clientAssests.adminurl || "NA"}}</td>
+                <td>{{client.clientAssests.services || "NA"}}</td>
+                <td>{{client.clientAssests.siteurl || "NA"}}</td>-->
               </tr>
 
               </tbody>
