@@ -18,7 +18,7 @@ export class AccordionDirective implements AfterContentChecked {
   closeOtherLinks(openLink: AccordionLinkDirective): void {
     this.navlinks.forEach((link: AccordionLinkDirective) => {
       if (link !== openLink) {
-        link.open = false;
+        link.open = true;
       }
     });
   }
