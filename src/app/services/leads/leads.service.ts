@@ -25,6 +25,7 @@ export class LeadsService {
   private REST_API_SERVER = `${REST_API_SERVER}`;
   private uri = "/leads";
   private client: Client;
+  private toDelete: any;
 
 
 
@@ -151,6 +152,17 @@ export class LeadsService {
         sellReason: data.sellReason,
         delinquentRent: data.delinquentRent
       }
+    }
+    console.log(this.client.toString())
+    return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/update" , this.client, this.httpOptions);
+  }
+
+  public deleteLead(data): Observable<Client> {
+    /* TODO: Need to fix first name issue on property details. issue is that I am not able to use the full name
+     *  'continuation' concatenation instead of creating a new property for it.
+     */
+    this.toDelete = {
+      email: data.email
     }
     console.log(this.client.toString())
     return this.httpClient.post<Client>(this.REST_API_SERVER + this.uri + "/update" , this.client, this.httpOptions);
