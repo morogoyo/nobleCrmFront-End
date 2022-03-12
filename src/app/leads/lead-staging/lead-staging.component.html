@@ -1,0 +1,37 @@
+<p>lead-staging works!</p>
+<div style="display: flex">
+
+  <div class="card m-3 p-2" style="width: 300px;">
+    <h5 class="card-title">Todo</h5>
+    <div class="card-body" style="width: 200px;">
+      <div style="border:1px red solid" cdkDropList [cdkDropListData]="todoList" [cdkDropListConnectedTo]="secondList"
+           #firstList="cdkDropList"
+           (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let todo of todoList" class="pop" cdkDrag>{{todo}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card m-3 p-2" style="width: 300px;">
+    <h5 class="card-title">Process</h5>
+    <div class="card-body" style="width: 200px;">
+      <div style="border:1px red solid" cdkDropList [cdkDropListData]="processList" [cdkDropListConnectedTo]="thirdList"
+           #secondList="cdkDropList"
+           (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let process of processList" class="pop" cdkDrag>{{process}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card m-3 p-2" style="width: 300px;">
+    <h5 class="card-title">Done</h5>
+    <div class="card-body" style="width: 200px;">
+      <div style="border:1px red solid" cdkDropList [cdkDropListData]="doneList" [cdkDropListConnectedTo]="secondList"
+           #thirdList="cdkDropList"
+           (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let done of doneList" class="pop" cdkDrag>{{done}}</div>
+      </div>
+    </div>
+  </div>
+</div>
