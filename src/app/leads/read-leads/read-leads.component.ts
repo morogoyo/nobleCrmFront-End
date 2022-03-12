@@ -14,6 +14,7 @@ export class ReadLeadsComponent implements OnInit {
   leads: any;
 
   ngOnInit(): void {
+    this.getAllLeads();
   }
 
   getAllLeads() {
