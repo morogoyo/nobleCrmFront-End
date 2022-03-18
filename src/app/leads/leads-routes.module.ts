@@ -4,12 +4,14 @@ import {NgModule} from "@angular/core";
 import {AddLeadsComponent} from "./add-leads/add-leads.component";
 import {ClientModule} from "../client/client.module";
 import {ReadLeadsComponent} from "./read-leads/read-leads.component";
+import {LeadStagingComponent} from "./lead-staging/lead-staging.component";
 
 
 const leadsRoutModule: Routes = [
 
       {path: 'addleads', component: AddLeadsComponent},
-      {path: 'readleads', component: ReadLeadsComponent}
+      {path: 'readleads', component: ReadLeadsComponent},
+      {path: 'staging', component: LeadStagingComponent}
       // {path: 'add-leads', component: AddLeadsComponent},
       // {path: 'add-leads', component: AddLeadsComponent}
 

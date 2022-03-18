@@ -7,6 +7,7 @@ import { ReadLeadsComponent } from './read-leads/read-leads.component';
 import {LeadsRoutes} from "./leads-routes.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import { LeadStagingComponent } from './lead-staging/lead-staging.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 
 
@@ -22,6 +23,7 @@ import { LeadStagingComponent } from './lead-staging/lead-staging.component';
         CommonModule,
         LeadsRoutes,
         ReactiveFormsModule,
+        DragDropModule
 
     ]
 })
