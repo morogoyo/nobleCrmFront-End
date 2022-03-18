@@ -123,6 +123,12 @@ const MENUITEMS = [
         icon: "ion-ios-help"
       },
       {
+        state: "staging",
+        name: "Lead Staging",
+        type: "link",
+        icon: "ion-ios-help"
+      },
+      {
         state: "test",
         name: "Test",
         type: "link",

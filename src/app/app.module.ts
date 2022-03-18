@@ -27,6 +27,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import {TokenizeResult} from "@angular/compiler/src/ml_parser/lexer";
 import { HttpJWTInterceptorService } from './services/httpInterceptor/http-jwt-interceptor.service';
 import { AuthenticateComponent } from './admin/authenticate/authenticate.component';
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -64,7 +65,9 @@ export function createTranslateLoader(http: HttpClient) {
     LoadingBarRouterModule,
     NgbModule,
     MatSidenavModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DragDropModule
+
 
   ],
   bootstrap: [AppComponent],
